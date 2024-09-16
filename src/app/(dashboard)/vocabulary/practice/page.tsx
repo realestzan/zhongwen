@@ -13,7 +13,7 @@ const Page = () => {
       omnis! Porro facilis quo animi consequatur. Explicabo.
     </p>
   </div> */}
-  <div className="container grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-4 mx-auto">
+  <div className="container grid gap-x-8 gap-y-16 md:grid-cols-4 grid-cols-2 lg:grid-cols-5 mx-auto">
     <div className="flex flex-col items-center">
       <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>书</p></div>
       <p className="text-center font-medium">Name</p>

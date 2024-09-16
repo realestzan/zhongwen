@@ -19,14 +19,14 @@ export default function WordExample() {
           <img className="h-32 w-full rounded-md object-cover lg:w-32" src="/topic-1.svg" alt="text" />
         </div>
         <div>
-          <span className="text-sm text-gray-500">August 20.20.21</span>
+          <span className="text-sm  ">August 20.20.21</span>
           <p className="mt-3 text-lg font-medium leading-6">
-            <a href="./blog-post.html" className="text-xl text-gray-800 group-hover:text-gray-500 lg:text-2xl">12 Graphic
+            <a href="./blog-post.html" className="text-xl  group-hover:  lg:text-2xl">12 Graphic
               Design Skills You Need To Get Hired (& How to Develop
               Them)
             </a>
           </p>
-          <p className="mt-2 text-lg text-gray-500">
+          <p className="mt-2 text-lg  ">
             A wonderful serenity has taken possession of my entire soul, like
             these sweet mornings of spring which I enjoy with my whole heart.
           </p>
@@ -37,13 +37,13 @@ export default function WordExample() {
           <img className="h-32 w-full rounded-md object-cover lg:w-32" src="/topic-1.svg" alt="text" />
         </div>
         <div>
-          <span className="text-sm text-gray-500">August 20.20.21</span>
+          <span className="text-sm  ">August 20.20.21</span>
           <p className="mt-3 text-lg font-medium leading-6">
-            <a href="./blog-post.html" className="text-xl text-gray-800 group-hover:text-gray-500 lg:text-2xl">Meet Now
+            <a href="./blog-post.html" className="text-xl  group-hover:  lg:text-2xl">Meet Now
               What? The essential new podcast for evolving designers
             </a>
           </p>
-          <p className="mt-2 text-lg text-gray-500">
+          <p className="mt-2 text-lg  ">
             A wonderful serenity has taken possession of my entire soul, like
             these sweet mornings of spring which I enjoy with my whole heart.
           </p>
@@ -54,13 +54,13 @@ export default function WordExample() {
           <img className="h-32 w-full rounded-md object-cover lg:w-32" src="/topic-1.svg" alt="text" />
         </div>
         <div>
-          <span className="text-sm text-gray-500">August 20.20.21</span>
+          <span className="text-sm  ">August 20.20.21</span>
           <p className="mt-3 text-lg font-medium leading-6">
-            <a href="./blog-post.html" className="text-xl text-gray-800 group-hover:text-gray-500 lg:text-2xl">B2B Branding:
+            <a href="./blog-post.html" className="text-xl  group-hover:  lg:text-2xl">B2B Branding:
               5 tips to go from boring to extraordinary
             </a>
           </p>
-          <p className="mt-2 text-lg text-gray-500">
+          <p className="mt-2 text-lg  ">
             A wonderful serenity has taken possession of my entire soul, like
             these sweet mornings of spring which I enjoy with my whole heart.
           </p>
@@ -71,14 +71,14 @@ export default function WordExample() {
           <img className="h-32 w-full rounded-md object-cover lg:w-32" src="/topic-1.svg" alt="text" />
         </div>
         <div>
-          <span className="text-sm text-gray-500">August 20.20.21</span>
+          <span className="text-sm  ">August 20.20.21</span>
           <p className="mt-3 text-lg font-medium leading-6">
-            <a href="./blog-post.html" className="text-xl text-gray-800 group-hover:text-gray-500 lg:text-2xl">Building a
+            <a href="./blog-post.html" className="text-xl  group-hover:  lg:text-2xl">Building a
               Career in Character Design: A chat with Sarah Beth
               Morgan
             </a>
           </p>
-          <p className="mt-2 text-lg text-gray-500">
+          <p className="mt-2 text-lg  ">
             A wonderful serenity has taken possession of my entire soul, like
             these sweet mornings of spring which I enjoy with my whole heart.
           </p>

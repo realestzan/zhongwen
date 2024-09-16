@@ -9,7 +9,7 @@ import WordExample from './word-examples'
 
 export default function Page() {
   return (
-    <div className='max-w-7xl mx-auto p-12 max-md:p-4 flex flex-col gap-32'>
+    <div className='max-w-7xl mx-auto p-12 max-md:p-0 flex flex-col gap-32'>
         <div id='word-search' ><WordSearch /></div>
 
         <div id='word-detail' ><WordDetail /></div>

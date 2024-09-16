@@ -5,7 +5,7 @@ export default function WordSearch() {
     <div>
       
       <section>
-  <div className="relative pt-24">
+  <div className="relative">
     <div className="mx-auto flex w-full text-left">
       <div className="relative mx-auto flex-col items-center">
         <div className="inline-flex items-center text-left">
@@ -13,22 +13,22 @@ export default function WordSearch() {
             <div className="items-start text-left lg:inline-flex">
               <div className="lg:pr-16">
                 <h1
-                  className="mb-8 flex max-w-6xl text-4xl font-semibold tracking-tight text-gray-800 md:max-w-3xl md:text-6xl">
+                  className="mb-8 flex max-w-6xl text-4xl font-semibold tracking-tight md:max-w-3xl md:text-6xl">
                   Search any Chinese Character
                 </h1>
               </div>
               <div>
-                <p className="flex max-w-3xl text-lg leading-relaxed text-gray-500">
+                <p className="flex max-w-3xl text-lg leading-relaxed  ">
                   Wenzi offers a wide array of both free and premium
                   components specifically designed for Tailwind CSS.
                 </p>
                 <div>
                   <form action="" method="post" id="revue-form" name="revue-form"
-                    className="mt-8 rounded-2xl border bg-gray-50 p-2 transition duration-500 ease-in-out sm:flex sm:max-w-lg">
+                    className="mt-8 rounded-2xl border bg-foreground/10 p-2 transition duration-500 ease-in-out sm:flex sm:max-w-lg">
                     <div className="min-w-0 flex-1">
                       <label htmlFor="member_email" className="sr-only">Email address</label>
                       <input id="cta-email" type="email"
-                        className="block w-full rounded-md border border-transparent bg-transparent px-5 py-3 text-base text-gray-600 transition duration-500 ease-in-out placeholder:text-gray-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                        className="block w-full rounded-md border border-transparent bg-transparent px-5 py-3 text-base transition duration-500 ease-in-out focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
                         placeholder="What word to search?" />
                     </div>
                     <div className="mt-4 sm:ml-3 sm:mt-0">
@@ -37,7 +37,7 @@ export default function WordSearch() {
                     </div>
                   </form>
                   <div className="sm:flex sm:max-w-lg">
-                    <p className="mt-3 text-xs text-gray-500">
+                    <p className="mt-3 text-xs  ">
                       By subscribing, you agree with Wenzi
                       <a className="underline" href="#">Terms of Service</a>
                       and

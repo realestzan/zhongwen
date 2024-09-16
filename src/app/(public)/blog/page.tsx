@@ -2,84 +2,14 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div className='mx-auto w-fit'>
+    <div className='mx-auto max-w-7xl flex flex-col gap-36 py-24 lg:p-8 md:p-4 sm:p-0 '>
       
 
 
 
-      <section>
-  <div className="container flex flex-col items-center gap-16">
-    <h2 className="mx-auto mb-3 text-pretty text-center text-2xl font-semibold md:mb-4 md:text-3xl lg:mb-6 lg:max-w-3xl">
-      Webinars
-    </h2>
-    <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
-      <a href="#"
-        className="group order-last grid gap-y-6 sm:order-first sm:col-span-12 sm:grid-cols-10 sm:gap-x-5 sm:gap-y-0 md:items-center md:gap-x-8 lg:col-span-10 lg:col-start-2 lg:gap-x-12">
-        <div className="sm:col-span-5">
-          <div className="mb-4 md:mb-6">
-            <div className="flex text-xs uppercase tracking-wider  text-zinc-600 dark:text-gray-200">
-              <span className="mr-3 md:mr-5 lg:mr-6">Webinar</span><span className="mr-3 md:mr-5 lg:mr-6">Employer of
-                record</span>
-            </div>
-          </div>
-          <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
-            Engaging Talent, Embracing Change: Uncover the Value of an Employer of Record
-          </h3>
-          <div className="mt-4 flex items-center space-x-2 md:mt-5">
-            <span className="font-semibold md:text-base">Read more</span><svg xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              className="lucide lucide-arrow-right ml-2 size-3 transition-transform group-hover:tranzinc-x-1">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </div>
-        </div>
-        <div className="order-first sm:order-last sm:col-span-5">
-          <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
-            <img src="/topic-1.svg"
-              alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-              className="h-full w-full object-cover transition-transform group-hover:scale-[1.05]" />
-          </div>
-        </div>
-      </a><a href="#"
-        className="group order-last grid gap-y-6 sm:order-first sm:col-span-12 sm:grid-cols-10 sm:gap-x-5 sm:gap-y-0 md:items-center md:gap-x-8 lg:col-span-10 lg:col-start-2 lg:gap-x-12">
-        <div className="sm:col-span-5">
-          <div className="mb-4 md:mb-6">
-            <div className="flex text-xs uppercase tracking-wider  text-zinc-600 dark:text-gray-200">
-              <span className="mr-3 md:mr-5 lg:mr-6">Webinar</span><span className="mr-3 md:mr-5 lg:mr-6">Employer of
-                record</span>
-            </div>
-          </div>
-          <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
-            Engaging Talent, Embracing Change: Uncover the Value of an Employer of Record
-          </h3>
-          <div className="mt-4 flex items-center space-x-2 md:mt-5">
-            <span className="font-semibold md:text-base">Read more</span><svg xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              className="lucide lucide-arrow-right ml-2 size-3 transition-transform group-hover:tranzinc-x-1">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </div>
-        </div>
-        <div className="order-first sm:order-last sm:col-span-5">
-          <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
-            <img src="/topic-7.svg"
-              alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-              className="h-full w-full object-cover transition-transform group-hover:scale-[1.05]" />
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
 
-
-
-<section className="py-32 max-w-7xl">
-  <div className="container">
+<section className='max-w-7xl mx-auto'>
+  <div>
     <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
       <div>
         <p className="mb-6 text-xs font-medium uppercase tracking-wider">Tag Line</p>
@@ -125,10 +55,10 @@ const Page = () => {
               <div>
                 <div className="flex aspect-[3/2] text-clip rounded-xl">
                   <div className="flex-1">
-                    <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
+                    <div className="relative f origin-bottom transition duration-300 group-hover:scale-105">
                       <img src="/topic-3.svg"
                         alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-                        className="size-full object-cover object-center" />
+                        className="f object-cover object-center" />
                     </div>
                   </div>
                 </div>
@@ -157,10 +87,10 @@ const Page = () => {
               <div>
                 <div className="flex aspect-[3/2] text-clip rounded-xl">
                   <div className="flex-1">
-                    <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
+                    <div className="relative f origin-bottom transition duration-300 group-hover:scale-105">
                       <img src="/topic-4.svg"
                         alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-                        className="size-full object-cover object-center" />
+                        className="f object-cover object-center" />
                     </div>
                   </div>
                 </div>
@@ -189,10 +119,10 @@ const Page = () => {
               <div>
                 <div className="flex aspect-[3/2] text-clip rounded-xl">
                   <div className="flex-1">
-                    <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
+                    <div className="relative f origin-bottom transition duration-300 group-hover:scale-105">
                       <img src="/topic-5.svg"
                         alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-                        className="size-full object-cover object-center" />
+                        className="f object-cover object-center" />
                     </div>
                   </div>
                 </div>
@@ -221,10 +151,10 @@ const Page = () => {
               <div>
                 <div className="flex aspect-[3/2] text-clip rounded-xl">
                   <div className="flex-1">
-                    <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
+                    <div className="relative f origin-bottom transition duration-300 group-hover:scale-105">
                       <img src="/topic-6.svg"
                         alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-                        className="size-full object-cover object-center" />
+                        className="f object-cover object-center" />
                     </div>
                   </div>
                 </div>
@@ -253,10 +183,10 @@ const Page = () => {
               <div>
                 <div className="flex aspect-[3/2] text-clip rounded-xl">
                   <div className="flex-1">
-                    <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
+                    <div className="relative f origin-bottom transition duration-300 group-hover:scale-105">
                       <img src="/topic-7.svg"
                         alt="Duis sem sem, gravida vel porttitor eu, volutpat ut arcu"
-                        className="size-full object-cover object-center" />
+                        className="f object-cover object-center" />
                     </div>
                   </div>
                 </div>
@@ -294,15 +224,15 @@ const Page = () => {
 
 
 
-<section>
-  <div className="container">
+<section className='max-w-7xl mx-auto'>
+  <div>
     <div className="border-b border-gray-600 pb-4">
       <h3 className="text-xl font-semibold leading-6 text-gray-800">
         Latest Entries
       </h3>
     </div>
 
-    <div className="relative mx-auto max-w-7xl">
+    <div className="relative mx-auto ">
       <div className="mx-auto mt-12 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-2">
         <div className="mb-12 flex cursor-pointer flex-col overflow-hidden">
           <a href="/blog-post">
@@ -314,7 +244,7 @@ const Page = () => {
             <a href="/blog-post"></a>
             <div className="flex-1">
               <a href="/blog-post">
-                <div className="flex space-x-1 pt-6 text-sm text-gray-500">
+                <div className="flex space-x-1 pt-6 text-sm  ">
                   <time dateTime="2020-03-10"> Mar 10, 2020 </time>
                   <span aria-hidden="true"> · </span>
                   <span> 4 min read </span>
@@ -324,7 +254,7 @@ const Page = () => {
                 <h3 className="text-2xl font-semibold leading-none tracking-tighter text-gray-600">
                   Typography on app.
                 </h3>
-                <p className="text-lg font-normal text-gray-500">
+                <p className="text-lg font-normal  ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                   facilis asperiores porro quaerat doloribus, eveniet dolore.
                   Adipisci tempora aut inventore optio animi.
@@ -355,7 +285,7 @@ const Page = () => {
               <a href="/blog-post"></a>
               <div className="flex-1">
                 <a href="/blog-post">
-                  <div className="flex space-x-1 pt-6 text-sm text-gray-500">
+                  <div className="flex space-x-1 pt-6 text-sm  ">
                     <time dateTime="2020-03-10"> Mar 10, 2020 </time>
                     <span aria-hidden="true"> · </span>
                     <span> 4 min read </span>
@@ -365,7 +295,7 @@ const Page = () => {
                   <h3 className="text-2xl font-semibold leading-none tracking-tighter text-gray-600">
                     Typography on app.
                   </h3>
-                  <p className="text-lg font-normal text-gray-500">
+                  <p className="text-lg font-normal  ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Velit facilis asperiores.
                   </p>
@@ -396,7 +326,7 @@ const Page = () => {
               <a href="/blog-post"></a>
               <div className="flex-1">
                 <a href="/blog-post">
-                  <div className="flex space-x-1 pt-6 text-sm text-gray-500">
+                  <div className="flex space-x-1 pt-6 text-sm  ">
                     <time dateTime="2020-03-10"> Mar 10, 2020 </time>
                     <span aria-hidden="true"> · </span>
                     <span> 4 min read </span>
@@ -406,7 +336,7 @@ const Page = () => {
                   <h3 className="text-2xl font-semibold leading-none tracking-tighter text-gray-600">
                     Typography on app.
                   </h3>
-                  <p className="text-lg font-normal text-gray-500">
+                  <p className="text-lg font-normal  ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Velit facilis asperiores.
                   </p>

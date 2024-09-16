@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased md:p-4`}
       >
           <ThemeProvider
             attribute="class"
@@ -35,6 +35,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+             <script
+          type="module"
+          defer
+          src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/grid.js"
+        ></script>
             {children}
           </ThemeProvider>
       </body>

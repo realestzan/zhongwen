@@ -17,7 +17,7 @@ export default function Example() {
     <div className="mx-auto w-fit max-w-6xl">
     
 
-    <section className="py-32">
+    <section className="lg:py-36">
   <div className="overflow-hidden border-b border-muted">
     <div className="container">
       <div className="mx-auto flex max-w-5xl flex-col items-ď">
@@ -82,7 +82,7 @@ export default function Example() {
           </div>
           <div className="flex items-ď p-6 pt-0">
             <button
-              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-white hover:bg-zinc-100 hover:text-zinc-800 h-10 px-4 py-2">
+              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
               Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 className="lucide lucide-chevron-right ml-2 h-4 w-4">
@@ -109,7 +109,7 @@ export default function Example() {
           </div>
           <div className="flex items-ď p-6 pt-0">
             <button
-              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-white hover:bg-zinc-100 hover:text-zinc-800 h-10 px-4 py-2">
+              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
               Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 className="lucide lucide-chevron-right ml-2 h-4 w-4">
@@ -285,8 +285,8 @@ export default function Example() {
     <p className="mb-4 text-sm text-gray-700 dark:text-gray-200 lg:text-base">OUR VALUES</p>
     <h2 className="text-3xl font-medium lg:text-4xl">Why Choose Us?</h2>
     <div className="mt-14 grid gap-6 lg:mt-20 lg:grid-cols-3">
-      <div className="rounded-lg bg-zinc-100 p-5">
-        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-white"><svg
+      <div className="rounded-lg bg-foreground/5 p-5">
+        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             className="lucide lucide-timer size-6">
@@ -300,8 +300,8 @@ export default function Example() {
           blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
         </p>
       </div>
-      <div className="rounded-lg bg-zinc-100 p-5">
-        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-white"><svg
+      <div className="rounded-lg bg-foreground/5 p-5">
+        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             className="lucide lucide-zoom-in size-6">
@@ -316,8 +316,8 @@ export default function Example() {
           blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
         </p>
       </div>
-      <div className="rounded-lg bg-zinc-100 p-5">
-        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-white"><svg
+      <div className="rounded-lg bg-foreground/5 p-5">
+        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             className="lucide lucide-zap size-6">
@@ -341,25 +341,25 @@ export default function Example() {
 
 
 <section className="py-32">
-  <div className="container max-w-7xl">
+  <div className="max-w-7xl">
     <h2 className="text-3xl font-medium lg:text-4xl">A better way to build websites</h2>
     <div className="mt-20 grid gap-9 lg:grid-cols-2">
-      <div className="flex flex-col justify-between rounded-lg bg-zinc-100">
+      <div className="flex flex-col justify-between rounded-lg dark:bg-foreground/5">
         <div className="flex justify-between gap-10 border-b">
           <div className="flex flex-col justify-between gap-14 py-6 pl-4 md:py-10 md:pl-8 lg:justify-normal">
-            <p className="text-xs text-gray-700">FOR DESIGNERS</p>
-            <h3 className="text-2xl text-gray-700 md:text-4xl">Built for artists and designers</h3>
+            <p className="text-xs">FOR DESIGNERS</p>
+            <h3 className="text-2xl md:text-4xl">Built for artists and designers</h3>
           </div>
           <div className="md:1/3 w-2/5 shrink-0 rounded-r-lg border-l">
             <img src="/illu-1.jpeg" alt="placeholder" className="h-full w-full object-cover" />
           </div>
         </div>
-        <div className="p-4 text-gray-700 md:p-8">
+        <div className="p-4 md:p-8">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima doloribus illum, labore
           quis facilis molestias!
         </div>
       </div>
-      <div className="flex flex-col justify-between rounded-lg bg-zinc-10ð">
+      <div className="flex flex-col justify-between rounded-lg dark:bg-foreground/5">
         <div className="flex justify-between gap-10 border-b">
           <div className="flex flex-col justify-between gap-14 py-6 pl-4 md:py-10 md:pl-8 lg:justify-normal">
             <p className="text-xs text-gray-700 dark:text-gray-200">FOR DEVELOPERS</p>

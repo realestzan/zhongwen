@@ -21,7 +21,7 @@ export default function Page() {
               <h4 className="mt-4 text-2xl font-semibold text-gray-600">
                 <span className="">Entry</span>
               </h4>
-              <p className="mt-4 text-base font-normal text-gray-500">
+              <p className="mt-4 text-base font-normal  ">
                 Install Tailwind CSS without any Javascript Framewrok locally
                 with purgeCSS, enable the dark mode option, prefferences or
                 class is upt to you.
@@ -41,7 +41,7 @@ export default function Page() {
               <h4 className="mt-4 text-2xl font-semibold text-gray-600">
                 <span className="">Entry</span>
               </h4>
-              <p className="mt-4 text-base font-normal text-gray-500">
+              <p className="mt-4 text-base font-normal  ">
                 Install Tailwind CSS without any Javascript Framewrok locally
                 with purgeCSS, enable the dark mode option, prefferences or
                 class is upt to you.
@@ -61,7 +61,7 @@ export default function Page() {
               <h4 className="mt-4 text-2xl font-semibold text-gray-600">
                 <span className="">Entry</span>
               </h4>
-              <p className="mt-4 text-base font-normal text-gray-500">
+              <p className="mt-4 text-base font-normal  ">
                 Install Tailwind CSS without any Javascript Framewrok locally
                 with purgeCSS, enable the dark mode option, prefferences or
                 class is upt to you.

@@ -7,7 +7,7 @@ const Page = () => {
       <section className="py-32 h-screen mx-auto flex items-center justify-center max-sm:p-4">
   <div>
     <div className="flex flex-col gap-4">
-      <a href='/'><img src="/logo.svg" alt="logo" className="h-8" /></a>
+      <a href='/'><img src="/logo.svg" alt="logo" className="h-8 dark:hidden" /><img src="/logo-dark.svg" alt="logo" className="h-8 light:hidden" /></a>
       <div className="rounded-lg border bg-card text-card-foreground shadow-sm mx-auto w-full max-w-md">
         <div className="flex flex-col space-y-1.5 p-6 items-center">
 
@@ -17,7 +17,7 @@ const Page = () => {
         <div className="p-6 pt-0">
           <div className="grid gap-4">
             <button
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-white hover:bg-zinc-100 hover:text-zinc-800 h-10 px-4 py-2 w-full">
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-white hover:bg-zinc-100 text-background h-10 px-4 py-2 w-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 className="lucide lucide-globe mr-2 size-4">
@@ -39,7 +39,7 @@ const Page = () => {
             <button
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-zinc-900 text-white hover:bg-zinc-900/90 h-10 px-4 py-2 w-full"
               type="submit">
-              Create an account
+              <a href='/dashboard'>Create an account</a>
             </button>
           </div>
           <div className="mt-4 text-sm   text-zinc-600 dark:text-gray-200 dark:text-zinc-100">

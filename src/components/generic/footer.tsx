@@ -3,13 +3,13 @@ import React from 'react'
 const Footer = () => {
   return (
 <section className="py-32 max-md:py-12 bg-background">
-  <div className='max-w-7xl mx-auto max-md:p-4'>
+  <div className='max-w-6xl mx-auto max-md:p-4'>
     <footer>
       <div className="grid grid-cols-2 max-md:flex max-md:flex-col gap-8 lg:grid-cols-5">
         <div className="col-span-2 mb-8 lg:mb-0">
           <img src="/logo.svg" alt="logo" className="mb-4 h-20 dark:hidden" />
           <img src="/logo-dark.svg" alt="logo" className="mb-4 h-20 hidden dark:block" />
-          <p className="font-bold">Components made easy.</p>
+          <p className="font-bold">Zhongwen made easy.</p>
         </div>
         <div>
           <h3 className="mb-4 font-bold">Product</h3>

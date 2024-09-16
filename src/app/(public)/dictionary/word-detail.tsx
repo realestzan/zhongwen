@@ -1,80 +1,83 @@
-import { PaperClipIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
 export default function WordDetail() {
   return (
     <div>
       
-      <div>
-      <div className="px-4 sm:px-0">
-        <h3 className="text-4xl mb-8 font-semibold leading-7 text-gray-900">Word Detail</h3>
-        <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details and application.</p>
-      </div>
-      <div className="mt-6 border-t border-gray-100">
-        <dl className="divide-y divide-gray-100">
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Full name</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Margot Foster</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Application for</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Backend Developer</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Email address</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Salary expectation</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">About</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur
-              qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud
-              pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
-            </dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
-            <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-              <ul role="list" className="divide-y divide-gray-100 rounded-md border border-gray-200">
-                <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
-                  <div className="flex w-0 flex-1 items-center">
-                    <PaperClipIcon aria-hidden="true" className="h-5 w-5 flex-shrink-0 text-gray-400" />
-                    <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                      <span className="truncate font-medium">resume_back_end_developer.pdf</span>
-                      <span className="flex-shrink-0 text-gray-400">2.4mb</span>
-                    </div>
-                  </div>
-                  <div className="ml-4 flex-shrink-0">
-                    <a href="#" className="font-medium text-red-600 hover:text-red-500">
-                      Download
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
-                  <div className="flex w-0 flex-1 items-center">
-                    <PaperClipIcon aria-hidden="true" className="h-5 w-5 flex-shrink-0 text-gray-400" />
-                    <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                      <span className="truncate font-medium">coverletter_back_end_developer.pdf</span>
-                      <span className="flex-shrink-0 text-gray-400">4.5mb</span>
-                    </div>
-                  </div>
-                  <div className="ml-4 flex-shrink-0">
-                    <a href="#" className="font-medium text-red-600 hover:text-red-500">
-                      Download
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
-      </div>
+      <section className="py-32">
+  <div className="container">
+    <h2 className="text-4xl font-medium md:text-6xl">Word Detail</h2>
+    <p className="mt-6 text-zinc-600 md:mb-20 md:text-lg">View our open roles.</p>
+    <div className="mt-12 md:mt-20">
+      <h3 className="mb-8 text-3xl font-medium md:text-4xl">Sales</h3>
+      <ul className="divide-y divide-border border-y border-border">
+        <li className="group">
+          <a href="#" className="flex items-center py-6">
+            <div>
+              <div className="font-medium md:text-lg">Sales Manager</div>
+              <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">London</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 group-hover:opacity-100">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </li>
+        <li className="group">
+          <a href="#" className="flex items-center py-6">
+            <div>
+              <div className="font-medium md:text-lg">Sales Development Representative</div>
+              <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">London</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 group-hover:opacity-100">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </li>
+        <li className="group">
+          <a href="#" className="flex items-center py-6">
+            <div>
+              <div className="font-medium md:text-lg">Sales Manager</div>
+              <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">London</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 group-hover:opacity-100">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
-    
+    <div className="mt-12 md:mt-20">
+      <h3 className="mb-8 text-3xl font-medium md:text-4xl">Customer Success</h3>
+      <ul className="divide-y divide-border border-y border-border">
+        <li className="group">
+          <a href="#" className="flex items-center py-6">
+            <div>
+              <div className="font-medium md:text-lg">Customer Success Associate</div>
+              <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">London</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 group-hover:opacity-100">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
     </div>
   )
 }
