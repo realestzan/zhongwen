@@ -1,45 +1,57 @@
 export interface WordExample { 
-    example: string;
-    translation: string;
-    pinyin: string;
+  example: string;
+  translation: string;
+  pinyin: string;
 }
 
 export interface Radical { 
-    radical: string;
-    meaning: string;
-    strokes: number;
-    pinyin: string;
+  radical: string;
+  meaning: string;
+  strokes: number;
+  pinyin: string;
 }
 
 export interface Word { 
-    word: string;
-    definition: string;
-    pinyin: string;
-    radicals: [Radical];
-    components: string;
-    hsk: number;
-    examples: [WordExample]
+  word: string;
+  definition: string;
+  pinyin: string;
+  radicals: [Radical];
+  components: string;
+  hsk: number;
+  examples: [WordExample]
 }
 
 export interface DictionaryEntry {
-    traditional: string;
-    simplified: string;
-    pinyin: string;
-    definitions: string[];
-  }
+  traditional: string;
+  simplified: string;
+  pinyin: string;
+  definitions: string[];
+}
 
+export interface Chat {
+  uid: string;
+  title: string;
+  messages: Message[]
+  createdAt: Date;
+}
 
-  export interface Talk {
-    simplified: string;
-    pinyin: string;
-    translation: string;
-  }
-
-
-  // Define the Message type
 export interface Message {
-    role: 'system' | 'user' | 'assistant';
-    content: string;
-  }
-  
-  
+  role: 'system' | 'user' | 'assistant',
+  content: string;
+}
+
+export interface User {
+  uid: string
+  displayName: string;
+  email: string;
+  photoURL: string;
+  createdAt: Date;
+}
+
+export interface Notebook {
+  uid: string;
+  title: string;
+  words: Word[];
+  createdAt: Date;
+  updatedAt: Date;
+}

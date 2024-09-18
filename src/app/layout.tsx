@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/generic/header";
+import Footer from "@/components/generic/footer";
+import { AuthProvider } from "@/context/appContext";
+import WrappedText from "./(feature)/magic/(text)/text";
+import { WrapperRealest } from "./(feature)/magic/realest";
+import { WrapperDrawer } from "./(feature)/magic/drawer";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -49,9 +55,23 @@ export default function RootLayout({
           defer
           src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/grid.js"
         ></script>
-            {children}
+               <script
+          type="module"
+          defer
+          src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/mirage.js"
+        ></script>
+      <AuthProvider>
+        <Header />
+      <WrapperRealest>
+      <WrappedText>
+      <main className='bg-background max-md:p-4'>{children}</main>
+      </WrappedText>
+      </WrapperRealest>
+    <Footer />
+    </AuthProvider>
           </ThemeProvider>
       </body>
     </html>
   );
 }
+

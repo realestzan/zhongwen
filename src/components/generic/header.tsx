@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -13,10 +13,21 @@ import {
   PopoverPanel
 } from "@headlessui/react";
 import {
+  ArrowDownOnSquareIcon,
+  ArrowDownOnSquareStackIcon,
   Bars3Icon,
+  BookmarkIcon,
+  BookOpenIcon,
   ChartPieIcon,
+  ChatBubbleBottomCenterIcon,
+  CreditCardIcon,
   CursorArrowRaysIcon,
+  EnvelopeIcon,
   FingerPrintIcon,
+  FolderIcon,
+  LanguageIcon,
+  NewspaperIcon,
+  SparklesIcon,
   SquaresPlusIcon,
   XMarkIcon
 } from "@heroicons/react/24/outline";
@@ -25,84 +36,125 @@ import {
   PhoneIcon,
   PlayCircleIcon
 } from "@heroicons/react/20/solid";
-import { ALargeSmallIcon, BookOpenTextIcon } from "lucide-react";
+import { ALargeSmallIcon, Book, BookIcon, BookOpenTextIcon, LanguagesIcon } from "lucide-react";
 import { ModeToggle } from "../toggle-theme";
 import { LanguageToggle } from "../toggle-language";
 import { motion } from "framer-motion";
+import { useAuth } from "@/context/appContext";
+import { usePathname } from "next/navigation";
+
+const other = [
+  {
+    name: "Blogs",
+    description: 'Tips and stories on learning Chinese.',
+    href: "/blogs",
+    icon: FolderIcon
+  },
+  {
+    name: "Article",
+    description: 'Expert articles on Chinese language.',
+    href: "/blog",
+    icon: NewspaperIcon
+  },
+  {
+    name: "Pricing",
+    description: 'Our plans and pricing options.',
+    href: "/pricing",
+    icon: CreditCardIcon
+  },
+  {
+    name: "Contact",
+    description: 'Reach our support team.',
+    href: "/contact",
+    icon: EnvelopeIcon
+  }
+];
 
 const feature = [
   {
-    name: "Vocabulary",
-    description: "Get a better understanding of your traffic",
-    href: "/vocabulary",
+    name: "Dictionary",
+    description: 'Search for Chinese words.',
+    href: "/dictionary",
+    icon: BookmarkIcon
+  },
+  {
+    name: "Translate",
+    description: 'Translate between languages.',
+    href: "/translate",
+    icon: LanguageIcon
+  },
+  {
+    name: "AI Language Model",
+    description: 'Practice with AI.',
+    href: "/ai/intro",
+    icon: SparklesIcon
+  },
+  {
+    name: "Story",
+    description: 'Read stories in Chinese.',
+    href: "/story",
+    icon: BookOpenIcon
+  },
+  {
+    name: "Chat",
+    description: 'Chat with native speakers or AI.',
+    href: "/chat",
+    icon: ChatBubbleBottomCenterIcon
+  }
+];
+
+const product = [
+  {
+    name: "Words",
+    description: 'Learn and track vocabulary.',
+    href: "/vocabulary/words",
+    icon: ChartPieIcon
+  },
+  {
+    name: "Notebook",
+    description: 'Save your learned words.',
+    href: "/vocabulary/notebook",
+    icon: ChartPieIcon
+  },
+  {
+    name: "Topic",
+    description: 'Learn words by topic.',
+    href: "/vocabulary/topics",
     icon: ChartPieIcon
   },
   {
     name: "Practice",
-    description: "Speak directly to your customers",
+    description: 'Interactive exercises and quizzes.',
     href: "/vocabulary/practice",
     icon: CursorArrowRaysIcon
   },
   {
     name: "History",
-    description: "Your customers’ data will be safe and secure",
+    description: 'Review your learning history.',
     href: "/vocabulary/history",
     icon: FingerPrintIcon
   },
   {
     name: "Account",
-    description: "Connect with third-party tools",
+    description: 'Manage your profile and settings.',
     href: "/dashboard",
     icon: SquaresPlusIcon
   }
+];
+
+const productActions = [
+  { name: "Grammar", href: "/grammar", icon: BookOpenTextIcon },
+  { name: "Vocabulary", href: "/vocabulary", icon: ALargeSmallIcon }
 ];
 const featureActions = [
   { name: "Grammar", href: "/grammar", icon: BookOpenTextIcon },
   { name: "Vocabulary", href: "/vocabulary", icon: ALargeSmallIcon }
 ];
-
-const other = [
-  {
-    name: "Story",
-    description: "See people talking to learn words",
-    href: "/story",
-    icon: ChartPieIcon
-  },
-  {
-    name: "Talk",
-    description: "See people talking to learn words",
-    href: "/talk",
-    icon: ChartPieIcon
-  },
-  {
-    name: "Blogs",
-    description: "Get a better understanding of your traffic",
-    href: "/blogs",
-    icon: ChartPieIcon
-  },
-  {
-    name: "Article",
-    description: "Get a better understanding of your traffic",
-    href: "/blog",
-    icon: ChartPieIcon
-  },
-  {
-    name: "Pricing",
-    description: "Get a better understanding of your traffic",
-    href: "/pricing",
-    icon: ChartPieIcon
-  },
-  {
-    name: "Contact",
-    description: "Get a better understanding of your traffic",
-    href: "/contact",
-    icon: ChartPieIcon
-  }
-];
 const otherActions = [
-  { name: "Sign in", href: "/signin", icon: PlayCircleIcon },
-  { name: "Sign up", href: "/signup", icon: PhoneIcon }
+  { name: "Sign in", href: "/signin", icon: ArrowDownOnSquareIcon },
+  { name: "Sign up", href: "/signup", icon: ArrowDownOnSquareStackIcon }
 ];
+
 
 export default function Header() {
   const links = [
@@ -113,6 +165,9 @@ export default function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+
+  const { user } = useAuth()
+
   return (
     <header className="bg-background text-foreground z-20">
       <nav
@@ -121,7 +176,7 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Zhongwen</span>
             <img alt="" src="/logo.svg" className="h-12 w-auto dark:hidden" />
             <img
               alt=""
@@ -144,16 +199,84 @@ export default function Header() {
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 outline-none">
-              Feature
+              Product
               <ChevronDownIcon
                 aria-hidden="true"
-                className="h-5 w-5 flex-none text-gray-400"
+                className="h-5 w-5 flex-none "
               />
             </PopoverButton>
 
             <PopoverPanel
               transition
               className="absolute -left-8 top-full z-20 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-background shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div className="p-4 group">
+              <a href='/signin' className='absolute bottom-0 right-0 top-0 left-0 z-20 opacity-0 w-full flex items-center justify-center text-center text-3xl group-hover:opacity-100 transition duration-500 font-bold'>Sign <span className='px-2 text-ai'> in </span> first</a>
+
+                {product.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-foreground/10 group-hover:blur-[3px] group-hover:opacity-40 transition duration-500"
+                  >
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-foreground/10 group-hover:bg-background">
+                      <item.icon
+                        aria-hidden="true"
+                        className="h-6 w-6 text-gray-600 group-hover:text-red-600"
+                      />
+                    </div>
+                    <div className="flex-auto">
+                      <a
+                        href={item.href}
+                        className="block font-semibold hover:text-red-500 transition duration-300"
+                      >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                      <p className="mt-1 text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-foreground/5">
+                {productActions.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center justify-center gap-x-2.5 p-4 text-sm font-semibold leading-6 hover:bg-foreground/5 hover:text-red-500 transition duration-300"
+                  >
+                    <item.icon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none "
+                    />
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </PopoverPanel>
+          </Popover>
+
+          {/* {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-semibold leading-6 hover:text-red-500 transition duration-300"
+            >
+              {link.label}
+            </a>
+          ))} */}
+
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 outline-none">
+              Feature
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="h-5 w-5 flex-none "
+              />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute -left-48 top-full z-20 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-background shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="p-4">
                 {feature.map((item) => (
@@ -180,16 +303,16 @@ export default function Header() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-foreground/10">
+              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-foreground/5">
                 {featureActions.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 hover:bg-foreground/10 hover:text-red-500 transition duration-300"
+                    className="flex items-center justify-center gap-x-2.5 p-4 text-sm font-semibold leading-6 hover:bg-foreground/5 hover:text-red-500 transition duration-300"
                   >
                     <item.icon
                       aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
+                      className="h-5 w-5 flex-none "
                     />
                     {item.name}
                   </a>
@@ -198,22 +321,12 @@ export default function Header() {
             </PopoverPanel>
           </Popover>
 
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold leading-6 hover:text-red-500 transition duration-300"
-            >
-              {link.label}
-            </a>
-          ))}
-
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 outline-none">
               Other
               <ChevronDownIcon
                 aria-hidden="true"
-                className="h-5 w-5 flex-none text-gray-400"
+                className="h-5 w-5 flex-none "
               />
             </PopoverButton>
 
@@ -257,16 +370,16 @@ export default function Header() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-foreground/10">
+              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-foreground/5">
                 {otherActions.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 hover:bg-foreground/10 hover:text-red-500 transition duration-300"
+                    className="flex items-center justify-center gap-x-2.5 p-4 text-sm font-semibold leading-6 hover:bg-foreground/5 hover:text-red-500 transition duration-300"
                   >
                     <item.icon
                       aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
+                      className="h-5 w-5 flex-none "
                     />
                     {item.name}
                   </a>
@@ -277,10 +390,10 @@ export default function Header() {
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="/signin"
+            href={user ? '/dashboard' : '/signin'}
             className="text-sm font-semibold leading-6 hover:text-red-500 transition"
           >
-            Log in <span aria-hidden="true">&rarr;</span>
+                  {user ? user.displayName : 'Log in'} <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -316,7 +429,29 @@ export default function Header() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-foreground/10">
-                    Feature
+                    Product
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none group-data-[open]:rotate-180"
+                    />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {[...product, ...productActions].map((item) => (
+                      <DisclosureButton
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10"
+                      >
+                        {item.name}
+                      </DisclosureButton>
+                    ))}
+                  </DisclosurePanel>
+                </Disclosure>
+
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-foreground/10">
+                  Product
                     <ChevronDownIcon
                       aria-hidden="true"
                       className="h-5 w-5 flex-none group-data-[open]:rotate-180"
@@ -358,7 +493,9 @@ export default function Header() {
                   </DisclosurePanel>
                 </Disclosure>
 
-                {links.map((link) => (
+
+
+                {/* {links.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
@@ -366,7 +503,7 @@ export default function Header() {
                   >
                     {link.label}
                   </a>
-                ))}
+                ))} */}
 
                 <div className="flex w-full justify-between py-2">
                   <h1>Toggle Mode</h1>
@@ -380,10 +517,10 @@ export default function Header() {
 
               <div className="py-6">
                 <a
-                  href="#"
+                  href={user ? '/dashboard' : '/signin'}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-foreground/10"
                 >
-                  Log in
+                  {user ? user.displayName : 'Log in'}
                 </a>
               </div>
             </div>

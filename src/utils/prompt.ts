@@ -4,12 +4,55 @@
 
 import OpenAI from "openai";
 import { Message } from "./types";
+import Groq from "groq-sdk";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   organization: process.env.OPENAI_ORGANIZATION,
   project: process.env.OPENAI_PROJECT
 });
+
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+type ChatCompletionResponse = {
+  messages: Message[];
+};
+
+export async function aiChatGroq(messages: Message[]): Promise<ChatCompletionResponse | null> {
+  try {
+    const response = await groq.chat.completions.create({
+      messages: messages.map((msg) => ({ role: msg.role, content: msg.content })), // Pass roles correctly
+      model: "llama3-8b-8192",
+    });
+
+    console.log(response.choices[0]?.message)
+
+    return response ? { messages: [{ role: 'assistant', content: response.choices[0]?.message.content || "" }] } : null;  // Return the assistant response
+  } catch (error) {
+    console.error("Error fetching chat completion:", error);
+    return null;
+  }
+}
+
+  
+export async function aiChatGpt(messages: Message[]): Promise<ChatCompletionResponse | null> {
+  try {
+    const response = await openai.chat.completions.create({
+      messages,
+      model: "gpt-3.5-turbo-0125"
+    });
+
+    const responseText = response.choices[0]?.message?.content?.trim() || null;
+
+    console.log(responseText)
+    return response ? { messages: [{ role: 'assistant', content: responseText || '' }]} : null;  // Return the assistant response
+  } catch (error) {
+    console.error("Error communicating with OpenAI:", error);
+    throw new Error("Error communicating with OpenAI");
+  }
+}
+
+
 
 export async function fetchAITranslation(prompt: string): Promise<string> {
     try {
@@ -29,22 +72,7 @@ export async function fetchAITranslation(prompt: string): Promise<string> {
     }
   }
 
-  
-  export async function fetchAITalk(messages: Message[]): Promise<string> {
-    try {
-      const response = await openai.chat.completions.create({
-        messages,
-        model: "gpt-4o-mini"
-      });
-  
-      const responseText = response.choices[0]?.message?.content?.trim() || "";
-      return responseText;
-    } catch (error) {
-      console.error("Error communicating with OpenAI:", error);
-      throw new Error("Error communicating with OpenAI");
-    }
-  }
-  
+
   
 
 export async function fetchAIDictionary(prompt: string): Promise<string> {

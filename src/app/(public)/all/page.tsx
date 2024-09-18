@@ -1,43 +1,51 @@
 import { Button } from '@/components/ui/button';
+import { LanguagesIcon } from 'lucide-react';
 import React from 'react'
 
 export default function Page() {
     const links = [
-        { label: "Onboarding", href: "/dictionary" },
-        { label: "Pricing", href: "/dictionary" },
+        { label: "Onboarding", href: "/dictionary", icon: LanguagesIcon },
+        { label: "Pricing", href: "/dictionary", icon: LanguagesIcon },
+        { label: "Contact", href: "/contact", icon: LanguagesIcon },
 
 
 
-        { label: "Blogs", href: "/blogs" },
-        { label: "Blog", href: "/blog" },
-        { label: "BlogRead", href: "/blog/read" },
+        { label: "Blogs", href: "/blogs", icon: LanguagesIcon },
+        { label: "Blog", href: "/blog", icon: LanguagesIcon },
+        { label: "BlogRead", href: "/blog/read", icon: LanguagesIcon },
 
 
 
-        { label: "Signin", href: "/dictionary" },
-        { label: "Signup", href: "/dictionary" },
+
+        { label: "Story", href: "/story", icon: LanguagesIcon },
+        { label: "Chat", href: "/chat/", icon: LanguagesIcon },
+        { label: "Chat Entry", href: "/chat/entry", icon: LanguagesIcon },
+
+
+
+        { label: "Signin", href: "/signin", icon: LanguagesIcon },
+        { label: "Signup", href: "/signup", icon: LanguagesIcon },
 
 
 
         
-        { label: "Dictionary", href: "/dictionary" },
-        { label: "DictionaryEntry", href: "/dictionary/entry" },
-        { label: "Translator", href: "/translate" },
+        { label: "Dictionary", href: "/dictionary", icon: LanguagesIcon },
+        { label: "DictionaryEntry", href: "/dictionary/entry", icon: LanguagesIcon },
+        { label: "Translator", href: "/translate", icon: LanguagesIcon },
 
 
 
 
-        { label: "Chat", href: "/chat" },
-        { label: "ChatIntro", href: "/chat/intro" },
-        { label: "ChatEntry", href: "/chat/demo" },
+        { label: "Chat", href: "/ai", icon: LanguagesIcon },
+        { label: "ChatIntro", href: "/chat/intro", icon: LanguagesIcon },
+        { label: "ChatEntry", href: "/chat/entry", icon: LanguagesIcon },
 
 
-
-
-        { label: "Vocabulary", href: "/vocabulary" },
-        { label: "VCPractice", href: "/vocabulary/practice" },
-        { label: "VCHistory", href: "/vocabulary/history" },
-        { label: "Notebook", href: "/notebook" },
+        { label: "Vocabulary", href: "/vocabulary", icon: LanguagesIcon },
+        { label: "Practice", href: "/vocabulary/practice", icon: LanguagesIcon },
+        { label: "History", href: "/vocabulary/history", icon: LanguagesIcon },
+        { label: "Notebook", href: "/vocabulary/notebook", icon: LanguagesIcon },
+        { label: "Words", href: "/vocabulary/word", icon: LanguagesIcon },
       ];
 
       

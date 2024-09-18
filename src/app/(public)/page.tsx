@@ -18,14 +18,53 @@ export default function Example() {
   const onboardingRef = useRef(null);
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+  const section4Ref = useRef(null);
+  const section5Ref = useRef(null);
 
   const onboardingInView = useInView(onboardingRef, { once: true });
   const section1InView = useInView(section1Ref, { once: true });
   const section2InView = useInView(section2Ref, { once: true });
+  const section3InView = useInView(section2Ref, { once: true });
+  const section4InView = useInView(section2Ref, { once: true });
+  const section5InView = useInView(section5Ref, { once: true });
+
+
+  const page_content = { 
+    onboarding_title: "Master Chinese with real-time AI assistance. Enhance your learning through personalized tools, interactive lessons, and instant feedback.",
+    onboarding_subtitle: "Master Chinese with real-time AI assistance. Enhance your learning through personalized tools, interactive lessons, and instant feedback.",
+
+
+    section1_title: "Explore Key Features",
+  section1_subtitle: "Discover the tools that make learning Chinese faster and more engaging.",
+  section1_card1_title: "Interactive Dictionary",
+  section1_card1_description: "Quickly look up Chinese words with examples and pronunciations.",
+  section1_card1_button: "Learn more",
+  section1_card2_title: "AI Conversation Practice",
+  section1_card2_description: "Chat with AI in Chinese to improve speaking skills.",
+  section1_card2_button: "Start now",
+  section1_card3_title: "Personalized Learning",
+  section1_card3_description: "Track progress and receive tailored exercises.",
+  section1_card3_button: "Get started",
+
+
+
+  section5_title: "Why Choose Us?",
+  section5_subtitle: "Our values make your learning experience unique and effective.",
+  
+ 
+  section5_card1_title: "Performance",
+  section5_card1_description: "Achieve faster progress with efficient and personalized learning tools.",
+  
+  section5_card2_title: "Quality",
+  section5_card2_description: "Access expertly curated lessons and materials for effective learning.",
+  
+  section5_card3_title: "Innovation",
+  section5_card3_description: "Experience cutting-edge AI technology designed to boost your language skills."
+};
 
   return (
     <div className="mx-auto w-fit max-w-6xl">
-    
 <AnimatedSection ref={onboardingRef} isInView={onboardingInView}>
     <section className="lg:py-36">
   <div className="overflow-hidden border-b border-muted">
@@ -35,10 +74,7 @@ export default function Example() {
           <h1 className="mb-8 text-gray-700 dark:text-gray-200 text-4xl font-medium lg:text-8xl">
             Learn Chinese with <span className='text-ai cursor-pointer'>Zhonegwen</span> - AI built in
           </h1>
-          <p className="mx-auto max-w-screen-md text-gray-700 dark:text-gray-200 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat
-            omnis! Porro facilis quo animi consequatur. Explicabo.
-          </p>
+          <p className="mx-auto max-w-screen-md text-gray-700 dark:text-gray-200 lg:text-xl">{page_content.onboarding_subtitle}</p>
           <div className="mt-12 flex w-full flex-col justify-ď gap-2 sm:flex-row">
             <button
               className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-zinc-900 text-white hover:bg-zinc-900/90 h-10 px-4 py-2">
@@ -75,9 +111,9 @@ export default function Example() {
         Badge
       </div>
       <h2 className="mb-2 text-gray-700 dark:text-gray-200 text-3xl font-semibold lg:text-5xl">
-        This is where your feature goes
+      {page_content.section1_title}
       </h2>
-      <p className="text-gray-700 dark:text-gray-200 lg:text-lg">Lorem ipsum dolor sit amet consectetur.</p>
+      <p className="text-gray-700 dark:text-gray-200 lg:text-lg">{page_content.section1_subtitle}</p>
       <div className="mt-6 flex flex-col gap-6 lg:flex-row">
         <div
           className="rounded-lg border  bg-card text-card-foreground shadow-sm flex flex-col justify-between gap-5 lg:w-1/3">
@@ -87,19 +123,15 @@ export default function Example() {
               Badge
             </div>
           </div>
-          <div className="p-6 pt-0 text-lg lg:text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nostrum ullam.
-            Voluptatibus.
+          <div className="p-6 pt-0 text-lg lg:text-2xl flex flex-col">
+            <span className='text-ai'>{page_content.section1_card1_title}</span><br/>
+            {page_content.section1_card1_description}
           </div>
           <div className="flex items-ď p-6 pt-0">
-            <button
+            <a href='/dictionary/entry'
               className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border  border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
-              Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
-                className="lucide lucide-chevron-right ml-2 h-4 w-4">
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </button>
+              {page_content.section1_card1_button}  &rarr;              
+            </a>
           </div>
         </div>
         <div className="lg:w-1/3">
@@ -114,19 +146,15 @@ export default function Example() {
               Badge
             </div>
           </div>
-          <div className="p-6 pt-0 text-lg lg:text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nostrum ullam.
-            Voluptatibus.
+          <div className="p-6 pt-0 text-lg lg:text-2xl flex flex-col">
+            <span className='text-ai'>{page_content.section1_card2_title}</span><br/>
+            {page_content.section1_card2_description}
           </div>
           <div className="flex items-ď p-6 pt-0">
-            <button
+            <a href='/chat/entry'
               className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border  border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
-              Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
-                className="lucide lucide-chevron-right ml-2 h-4 w-4">
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </button>
+              {page_content.section1_card2_button}  &rarr;              
+            </a>
           </div>
         </div>
       </div>
@@ -215,7 +243,7 @@ export default function Example() {
 </AnimatedSection>
 
 
-
+<AnimatedSection ref={section3Ref} isInView={section3InView}>
 <section className="py-32">
   <div className="container">
     <div className="space-y-10 rounded-lg border  py-10 md:px-4">
@@ -283,6 +311,7 @@ export default function Example() {
     </div>
   </div>
 </section>
+</AnimatedSection>
 
 
 
@@ -291,11 +320,11 @@ export default function Example() {
 
 
 
-
+<AnimatedSection ref={section4Ref} isInView={section4InView}>
 <section className="py-32">
   <div className="container">
-    <p className="mb-4 text-sm text-gray-700 dark:text-gray-200 lg:text-base">OUR VALUES</p>
-    <h2 className="text-3xl font-medium lg:text-4xl">Why Choose Us?</h2>
+    <p className="mb-4 text-sm text-gray-700 dark:text-gray-200 lg:text-base">{page_content.section5_subtitle}</p>
+    <h2 className="text-3xl font-medium lg:text-4xl">{page_content.section5_title}</h2>
     <div className="mt-14 grid gap-6 lg:mt-20 lg:grid-cols-3">
       <div className="rounded-lg bg-foreground/5 p-5">
         <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
@@ -306,11 +335,8 @@ export default function Example() {
             <line x1="12" x2="15" y1="14" y2="11"></line>
             <circle cx="12" cy="14" r="8"></circle>
           </svg></span>
-        <h3 className="mb-2 text-xl font-medium">Performance</h3>
-        <p className="leading-7 text-gray-700 dark:text-gray-200">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt beatae tenetur totam aut
-          blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
-        </p>
+        <h3 className="mb-2 text-xl font-medium">{page_content.section5_card1_title}</h3>
+        <p className="leading-7 text-gray-700 dark:text-gray-200">{page_content.section5_card1_description}</p>
       </div>
       <div className="rounded-lg bg-foreground/5 p-5">
         <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
@@ -322,11 +348,8 @@ export default function Example() {
             <line x1="11" x2="11" y1="8" y2="14"></line>
             <line x1="8" x2="14" y1="11" y2="11"></line>
           </svg></span>
-        <h3 className="mb-2 text-xl font-medium">Quality</h3>
-        <p className="leading-7 text-gray-700 dark:text-gray-200">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt beatae tenetur totam aut
-          blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
-        </p>
+        <h3 className="mb-2 text-xl font-medium">{page_content.section5_card2_title}</h3>
+        <p className="leading-7 text-gray-700 dark:text-gray-200">{page_content.section5_card2_description}</p>
       </div>
       <div className="rounded-lg bg-foreground/5 p-5">
         <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
@@ -337,21 +360,18 @@ export default function Example() {
               d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
             </path>
           </svg></span>
-        <h3 className="mb-2 text-xl font-medium">Innovation</h3>
-        <p className="leading-7 text-gray-700 dark:text-gray-200">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt beatae tenetur totam aut
-          blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
-        </p>
+        <h3 className="mb-2 text-xl font-medium">{page_content.section5_card3_title}</h3>
+        <p className="leading-7 text-gray-700 dark:text-gray-200">{page_content.section5_card3_description}</p>
       </div>
     </div>
   </div>
 </section>
+</AnimatedSection>
 
 
 
 
-
-
+<AnimatedSection ref={section5Ref} isInView={section5InView}>
 <section className="py-32">
   <div className="max-w-7xl">
     <h2 className="text-3xl font-medium lg:text-4xl">A better way to build websites</h2>
@@ -389,7 +409,7 @@ export default function Example() {
     </div>
   </div>
 </section>
-
+</AnimatedSection>
 
     </div>
   )

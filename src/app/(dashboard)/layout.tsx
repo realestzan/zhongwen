@@ -15,18 +15,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { label: 'Practice', href: '/vocabulary/practice' },
     { label: 'Grammar', href: '/grammar' },
     { label: 'Topics', href: '/vocabulary/topics' },
-    { label: 'Notebook', href: '/notebook' },
-    { label: 'Side Words', href: '/side-words' },
-    { label: 'Words', href: '/words' },
-    { label: 'Paragraph', href: '/paragraph' },
+    { label: 'Notebook', href: '/vocabulary/notebook' },
+    { label: 'Words', href: '/vocabulary/words' },
+    { label: 'Paragraph', href: '/vocabulary/paragraph' },
     { label: 'History', href: '/vocabulary/history' },
     { label: 'Profile', href: '/profile' },
   ];
   const pathname = usePathname();
 
   return (
-    <div>
-      <Header />
       <main className='bg-background'>
 
 
@@ -51,8 +48,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
 
       </main>
-      <Footer />
-    </div>
   );
 };
 

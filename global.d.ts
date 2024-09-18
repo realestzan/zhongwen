@@ -5,5 +5,12 @@ declare namespace JSX {
         color?: string;
       };
     }
+
+    interface IntrinsicElements {
+      'l-mirage': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        size?: string;
+        color?: string;
+      };
+    }
   }
   
