@@ -3,9 +3,6 @@ import { authSignInWithGoogle } from '@/utils/auth'
 import React from 'react'
 
 const Page = () => {
-  function handleSignIn() {
-    authSignInWithGoogle()
-  }
 
   return (
     <div>
@@ -13,7 +10,7 @@ const Page = () => {
       <section className="py-32 min-h-[80vh] mx-auto flex items-center justify-center max-sm:p-4">
   <div>
     <div className="flex flex-col gap-4">
-      <a href='/'><img src="/logo.svg" alt="logo" className="h-8 dark:hidden" /><img src="/logo-dark.svg" alt="logo" className="h-8 hidden dark:block" /></a>
+      {/* <a href='/'><img src="/logo.svg" alt="logo" className="h-8 dark:hidden" /><img src="/logo-dark.svg" alt="logo" className="h-8 hidden dark:block" /></a> */}
       <div className="rounded-lg border border-black  bg-card text-card-foreground shadow-sm mx-auto w-full max-w-md">
         <div className="flex flex-col space-y-1.5 p-6 items-center">
 
@@ -22,7 +19,7 @@ const Page = () => {
         </div>
         <div className="p-6 pt-0">
           <div className="grid gap-4">
-            <button onClick={handleSignIn}
+            <button onClick={authSignInWithGoogle}
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-black  border-input bg-foreground hover:bg-foreground/70 text-background h-10 px-4 py-2 w-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"

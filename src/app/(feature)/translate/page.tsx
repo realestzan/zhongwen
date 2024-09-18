@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/table"
 import AnimatedSection from '@/components/animate/section';
 import { useInView } from 'framer-motion';
-import { fetchAITranslation } from '@/utils/prompt';
+import { aiTranslate } from '@/utils/prompt';
 
 
 export default function Page() {
@@ -88,8 +88,7 @@ export default function Page() {
     e.preventDefault();
     setTranslateStatus(2);
     try {
-      // Fetch response from API (assuming fetchChatGPTResponse is defined)
-      const chatResponse = await fetchAITranslation(text);
+      const chatResponse = await aiTranslate(text);
       setTranslatedText(chatResponse);
     } catch (error) {
       console.error('Error fetching response:', error);

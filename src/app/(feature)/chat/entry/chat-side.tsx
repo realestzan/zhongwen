@@ -1,9 +1,10 @@
 'use client'
 
+import moment from 'moment'
 import { useEffect, useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { dbGetChats } from '@/utils/db'
+import { dbDeleteChat, dbGetChats } from '@/utils/db'
 import { Chat } from '@/utils/types'
 import { useRouter } from 'next/navigation'
 
@@ -32,11 +33,11 @@ const products = [
   // More products...
 ]
 
-interface ChatSideListProps {
+interface ChatSideProps {
     open: boolean;
     setOpen: (open: boolean) => void;
   }
-export default function ChatSide({ open, setOpen }: ChatSideListProps) {
+export default function ChatSide({ open, setOpen }: ChatSideProps) {
 
   const [chats, setChats] = useState<Chat[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -53,6 +54,10 @@ export default function ChatSide({ open, setOpen }: ChatSideListProps) {
     router.push('/chat/entry')
     setOpen(false)
   } 
+
+  const handleChatName = (id: string) => {
+
+  }
 
 
   useEffect(() => {
@@ -84,6 +89,7 @@ export default function ChatSide({ open, setOpen }: ChatSideListProps) {
         transition
         className="fixed inset-0 bg-background/70 bg-opacity-75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
       />
+      
 
       <div className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -125,18 +131,19 @@ export default function ChatSide({ open, setOpen }: ChatSideListProps) {
                             <div className="ml-4 flex flex-1 flex-col">
                               <div>
                                 <div className="flex justify-between text-base font-medium">
-                                  <h3>
-                                    <a >{chat.title}</a>
+                                  <h3 onDoubleClick={() => handleChatName(chat.uid)}>
+                                    <p >{moment(chat.title).format('MMMM Do, YYYY [at] h:mm:ss A').split(' at ')[0]}</p>
+                                    <p >{moment(chat.title).format('MMMM Do, YYYY [at] h:mm:ss A').split(' at ')[1]}</p>
                                   </h3>
                                   {/* <p className="ml-4">{chat.uid}</p> */}
                                 </div>
                                 {/* <p className="mt-1 text-sm  ">{chat.color}</p> */}
                               </div>
                               <div className="flex flex-1 items-end justify-between text-sm">
-                                <p className=" ">{chat.uid}</p>
+                                <p className="max-sm:max-w-[20vw] overflow-hidden text-ellipsis">{chat.uid}</p>
 
                                 <div className="flex">
-                                  <button type="button" className="font-medium text-red-600 hover:text-red-500">
+                                  <button type="button" onClick={() => dbDeleteChat(chat.uid)} className="font-medium text-red-600 hover:text-red-500">
                                     Remove
                                   </button>
                                 </div>
@@ -149,16 +156,17 @@ export default function ChatSide({ open, setOpen }: ChatSideListProps) {
                   </div>
                 </div>
 
+
                 <div className="border-t border-foreground/10 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium">
-                    <p>Subtotal</p>
-                    <p>$262.00</p>
+                    <p>Total Chats</p>
+                    <p>{chats.length}</p>
                   </div>
-                  <p className="mt-0.5 text-sm  ">Shipping and taxes calculated at checkout.</p>
+                  {/* <p className="mt-0.5 text-sm  ">Shipping and taxes calculated at checkout.</p> */}
                   <div className="mt-6">
                     <button
                       onClick={handleNewChat}
-                      className="flex w-full items-center justify-center rounded-md border  border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700"
+                      className="flex w-full items-center justify-center rounded-md border  border-transparent bg-foreground text-background px-6 py-3 text-base font-medium shadow-sm hover:bg-foreground/80"
                     >
                       New Chat
                     </button>
@@ -171,8 +179,7 @@ export default function ChatSide({ open, setOpen }: ChatSideListProps) {
                         onClick={() => setOpen(false)}
                         className="font-medium text-red-600 hover:text-red-500"
                       >
-                        Continue Shopping
-                        <span aria-hidden="true"> &rarr;</span>
+                        Save current chat
                       </button>
                     </p>
                   </div>
@@ -183,6 +190,7 @@ export default function ChatSide({ open, setOpen }: ChatSideListProps) {
           </div>
         </div>
       </div>
+
     </Dialog>
   )
 }

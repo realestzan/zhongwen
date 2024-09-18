@@ -54,11 +54,11 @@ export async function aiChatGpt(messages: Message[]): Promise<ChatCompletionResp
 
 
 
-export async function fetchAITranslation(prompt: string): Promise<string> {
+export async function aiTranslate(prompt: string): Promise<string> {
     try {
       const response = await openai.chat.completions.create({
         messages: [{ role: "user", content: `
-          Act as a AI Translator, and translate this text for me from Chinese to English (Or opposite, based on context):
+          Act as a AI Translator, and translate this text for me from Chinese to English (Or translate to Chinese if the input is English):
           ${prompt}
           ` }],
         model: "gpt-3.5-turbo"

@@ -1,8 +1,4 @@
-export interface WordExample { 
-  example: string;
-  translation: string;
-  pinyin: string;
-}
+
 
 export interface Radical { 
   radical: string;
@@ -15,12 +11,13 @@ export interface Word {
   word: string;
   definition: string;
   pinyin: string;
-  radicals: [Radical];
-  components: string;
-  hsk: number;
   examples: [WordExample]
 }
-
+export interface WordExample { 
+  example: string;
+  translation: string;
+  pinyin: string;
+}
 export interface DictionaryEntry {
   traditional: string;
   simplified: string;

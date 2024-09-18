@@ -1,5 +1,6 @@
 'use client'
 import { useAuth } from '@/context/appContext'
+import { authDeleteUser, authSignOut } from '@/utils/auth'
 import React from 'react'
 
 export default function Page() {
@@ -50,7 +51,7 @@ export default function Page() {
           <a href="#" className="flex items-center py-6">
             <div>
               <div className="font-medium md:text-lg">Google</div>
-              <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">{user ? user.createdAt.toISOString() : '23:40 23/03/2004'}</div>
+              <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">{user ? '' : '23:40 23/03/2004'}</div>
             </div>
             <div className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 transistion duration-300 group-hover:opacity-100 text-3xl text-thin">&rarr;</div>
           </a>
@@ -100,7 +101,7 @@ export default function Page() {
             <div className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 transistion duration-300 group-hover:opacity-100 text-3xl text-thin">&rarr;</div>
           </a>
 
-          <a href="#" className="flex items-center py-6">
+          <a onClick={authSignOut} className="flex items-center py-6 cursor-pointer">
             <div>
               <div className="font-medium md:text-lg text-red-300">Sign Out</div>
               <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">Switch account | stay anonymous</div>
@@ -108,7 +109,7 @@ export default function Page() {
             <div className="lucide lucide-arrow-right ml-auto size-6 -tranzinc-x-6 opacity-0 transition-all group-hover:tranzinc-x-0 transistion duration-300 group-hover:opacity-100 text-3xl text-thin">&rarr;</div>
           </a>
 
-          <a href="#" className="flex items-center py-6">
+          <a onClick={authDeleteUser} className="flex items-center py-6 cursor-not-allowed">
             <div>
               <div className="font-medium md:text-lg text-red-500">Delete Account</div>
               <div className="text-xs text-zinc-600 md:mt-2 md:text-sm">You can't change this once done</div>

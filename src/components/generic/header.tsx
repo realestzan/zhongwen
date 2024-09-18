@@ -36,12 +36,13 @@ import {
   PhoneIcon,
   PlayCircleIcon
 } from "@heroicons/react/20/solid";
-import { ALargeSmallIcon, Book, BookIcon, BookOpenTextIcon, LanguagesIcon } from "lucide-react";
+import { ALargeSmallIcon, Book, BookIcon, BookOpenTextIcon, LanguagesIcon, SparkleIcon } from "lucide-react";
 import { ModeToggle } from "../toggle-theme";
 import { LanguageToggle } from "../toggle-language";
 import { motion } from "framer-motion";
 import { useAuth } from "@/context/appContext";
 import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
 
 const other = [
   {
@@ -108,19 +109,19 @@ const product = [
     name: "Words",
     description: 'Learn and track vocabulary.',
     href: "/vocabulary/words",
-    icon: ChartPieIcon
+    icon: LanguageIcon
   },
   {
     name: "Notebook",
     description: 'Save your learned words.',
     href: "/vocabulary/notebook",
-    icon: ChartPieIcon
+    icon: BookIcon
   },
   {
     name: "Topic",
     description: 'Learn words by topic.',
     href: "/vocabulary/topics",
-    icon: ChartPieIcon
+    icon: BookmarkIcon
   },
   {
     name: "Practice",
@@ -165,6 +166,21 @@ export default function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleRealest = () => {
+    // Create a new KeyboardEvent for Command + J
+    const event = new KeyboardEvent('keydown', {
+      key: 'j',
+      code: 'KeyJ',
+      keyCode: 74, // keyCode for 'J'
+      which: 74,   // 'which' is often used for compatibility
+      metaKey: true,  // Command key on macOS
+      bubbles: true,
+      cancelable: true
+    });
+
+    // Dispatch the event to the document
+    document.dispatchEvent(event);
+  };
 
   const { user } = useAuth()
 
@@ -246,7 +262,7 @@ export default function Header() {
                   >
                     <item.icon
                       aria-hidden="true"
-                      className="h-5 w-5 flex-none "
+                      className="h-5 w-5 flex-none"
                     />
                     {item.name}
                   </a>
@@ -312,7 +328,7 @@ export default function Header() {
                   >
                     <item.icon
                       aria-hidden="true"
-                      className="h-5 w-5 flex-none "
+                      className="h-5 w-5 flex-none"
                     />
                     {item.name}
                   </a>
@@ -379,7 +395,7 @@ export default function Header() {
                   >
                     <item.icon
                       aria-hidden="true"
-                      className="h-5 w-5 flex-none "
+                      className="h-5 w-5 flex-none"
                     />
                     {item.name}
                   </a>
@@ -441,9 +457,13 @@ export default function Header() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10"
+                        className="w-full justify-between rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10 flex items-center"
                       >
                         {item.name}
+                         <item.icon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none opacity-0"
+                    />
                       </DisclosureButton>
                     ))}
                   </DisclosurePanel>
@@ -451,7 +471,7 @@ export default function Header() {
 
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-foreground/10">
-                  Product
+                  Feature
                     <ChevronDownIcon
                       aria-hidden="true"
                       className="h-5 w-5 flex-none group-data-[open]:rotate-180"
@@ -463,9 +483,13 @@ export default function Header() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10"
+                        className="w-full justify-between rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10 flex items-center"
                       >
                         {item.name}
+                         <item.icon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none opacity-0"
+                    />
                       </DisclosureButton>
                     ))}
                   </DisclosurePanel>
@@ -485,9 +509,13 @@ export default function Header() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10"
+                        className="w-full justify-between rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-foreground/10 flex items-center"
                       >
                         {item.name}
+                         <item.icon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none opacity-0"
+                    />
                       </DisclosureButton>
                     ))}
                   </DisclosurePanel>
@@ -513,7 +541,15 @@ export default function Header() {
                   <h1>Change Language</h1>
                   <LanguageToggle />
                 </div>
+
+                <div onClick={handleRealest} className="flex w-full justify-between py-2">
+                <SparkleIcon strokeWidth={1} />
+                <h1 className="text-ai font-black">Realest</h1>
+                  
+                </div>
               </div>
+
+            
 
               <div className="py-6">
                 <a
@@ -523,6 +559,10 @@ export default function Header() {
                   {user ? user.displayName : 'Log in'}
                 </a>
               </div>
+
+
+            
+            
             </div>
           </div>
         </DialogPanel>

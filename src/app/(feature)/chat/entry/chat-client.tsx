@@ -25,9 +25,10 @@ import {
 import AnimatedSection from '@/components/animate/section';
 import { dbGetChat, dbSetChat } from '@/utils/db';
 import { useSearchParams } from 'next/navigation';
+import moment from 'moment';
 
 
-export default function PageChat({ id }: {id: string}) {
+export default function ChatClient({ id }: {id: string}) {
   const models = [
     {
       value: "gpt",
@@ -145,7 +146,6 @@ export default function PageChat({ id }: {id: string}) {
   };
 
 
-  const searchParams = useSearchParams();
   useEffect(() => {
     const fetchChat = async (chatId: string) => {
       try {
@@ -172,8 +172,11 @@ export default function PageChat({ id }: {id: string}) {
   return (
     <div className="max-w-5xl mx-auto lg:py-36 min-h-[80vh]">
       <AnimatedSection ref={onboardingRef} isInView={onboardingInView}>
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-6xl max-md:text-2xl font-medium">{chat ? chat.title : model}</h1>
+      <div className="flex justify-between items-center mb-4 max-sm:flex-col w-full gap-8 max-sm:items-start">
+        <h1 className="text-6xl max-md:text-2xl font-medium">
+        <p >{chat ? moment(chat.title).format('MMMM Do, YYYY [at] h:mm:ss A').split(' at ')[0] : model}</p>
+        <p className='text-2xl mt-4'>{chat && moment(chat.title).format('MMMM Do, YYYY [at] h:mm:ss A').split(' at ')[1]}</p>
+        </h1>
         
         <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>

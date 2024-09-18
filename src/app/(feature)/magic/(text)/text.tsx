@@ -1,6 +1,55 @@
 'use client'
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 
+import { ArchiveBoxArrowDownIcon, HeartIcon, LanguageIcon, SparklesIcon } from '@heroicons/react/24/outline';
+
+import TextWord from './text-word';
+import { dbSetWord, handleCedictSearch } from '@/utils/db';
+import { aiTranslate } from '@/utils/prompt';
+
+
+
+
+import {
+  BookPlusIcon,
+    BrainIcon,
+    Cloud,
+    CreditCard,
+    Github,
+    Globe2Icon,
+    Keyboard,
+    LanguagesIcon,
+    LifeBuoy,
+    LogOut,
+    Mail,
+    MessageSquare,
+    Plus,
+    PlusCircle,
+    Settings,
+    SparkleIcon,
+    User,
+    UserPlus,
+    Users,
+    WandSparklesIcon,
+  } from "lucide-react"
+  
+  import { Button } from "@/components/ui/button"
+  import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuPortal,
+    DropdownMenuSeparator,
+    DropdownMenuShortcut,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger,
+    DropdownMenuTrigger,
+  } from "@/components/ui/dropdown-menu"
+import { Dialog } from '@/components/generic/dialog';
+
 interface TextSelectionWrapperProps {
   children: ReactNode;
 }
@@ -9,6 +58,7 @@ const WrappedText: React.FC<TextSelectionWrapperProps> = ({ children }) => {
   const [selectedText, setSelectedText] = useState<string | null>(null);
   const [dropdownPosition, setDropdownPosition] = useState<{ top: number; left: number } | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  // const [alert, setAlert] = useState('')
 
   // Function to handle text selection
   const handleTextSelection = () => {
@@ -66,96 +116,31 @@ const WrappedText: React.FC<TextSelectionWrapperProps> = ({ children }) => {
           ref={dropdownRef}
           style={{
             position: 'absolute',
-            top: `${dropdownPosition.top - 100}px`,
+            top: `${dropdownPosition.top - 90}px`,
             left: `${dropdownPosition.left}px`,
-            backgroundColor: 'white',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-            padding: '8px',
-            zIndex: 10,
-            boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.2)',
           }}
+          className='bg-foreground p-2 max-sm:p-1 rounded-2xl z-10'
         >
           {/* <p style={{ margin: '0 0 8px 0' }}>Selected: "{selectedText}"</p>
           <button onClick={handleCopy}>Copy</button>
           <button onClick={handleSaveToDatabase} style={{ marginLeft: '8px' }}>
             Save to Database
           </button> */}
-          <WrapperText />
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default WrappedText;
-
-
-
-
-
-
-
-import {
-  BookPlusIcon,
-    BrainIcon,
-    Cloud,
-    CreditCard,
-    Github,
-    Globe2Icon,
-    Keyboard,
-    LifeBuoy,
-    LogOut,
-    Mail,
-    MessageSquare,
-    Plus,
-    PlusCircle,
-    Settings,
-    SparkleIcon,
-    User,
-    UserPlus,
-    Users,
-    WandSparklesIcon,
-  } from "lucide-react"
-  
-  import { Button } from "@/components/ui/button"
-  import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuPortal,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuSub,
-    DropdownMenuSubContent,
-    DropdownMenuSubTrigger,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-import { ArchiveBoxArrowDownIcon, HeartIcon, LanguageIcon, SparklesIcon } from '@heroicons/react/24/outline';
-import { WrapperDrawer } from '../drawer';
-import DictionaryDetail from '../../dictionary/entry/dictionary-detail';
-import TextWord from './text-word';
-  
-  export function WrapperText() {
-    const [open, setOpen] = useState(false)
-    return (
-     <main>
+          
+          
+          <main>
        <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          {/* <Button variant="outline">Magic </Button> */}
-          {/* <SparklesIcon scale={5} />  */}
           <div className='group p-4'>
-          <WandSparklesIcon strokeWidth={1} className='group-hover:hidden hover:text-red-500 transition' size={35}/>
-          <SparkleIcon strokeWidth={1} className='group-hover:block hidden hover:text-red-500 transition' size={35}/>
+          <WandSparklesIcon className='group-hover:hidden text-background max-sm:w-4 max-sm:h-4 hover:text-red-500 transition' size={25}/>
+          <SparkleIcon className='group-hover:block hidden text-background max-sm:w-4 max-sm:h-4 hover:text-red-500 transition' size={25}/>
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel>Magics</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={() => dbSetWord(selectedText)}>
               <ArchiveBoxArrowDownIcon className="mr-2 h-4 w-4" strokeWidth={1}/>
               <span>Save</span>
               <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
@@ -165,9 +150,11 @@ import TextWord from './text-word';
               <span>Favorite</span>
               <DropdownMenuShortcut>⌥⌘S</DropdownMenuShortcut>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={() => { 
+              window.open(`/dictionary/entry?id=${selectedText}`)
+            }}>
               <Keyboard className="mr-2 h-4 w-4" strokeWidth={1}/>
-              <span>Copy</span>
+              <span>Dictionary</span>
               <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
             </DropdownMenuItem>
           </DropdownMenuGroup>
@@ -180,6 +167,20 @@ import TextWord from './text-word';
             <DropdownMenuItem>
               <Plus className="mr-2 h-4 w-4" strokeWidth={1}/>
               <span>New Notebook</span>
+              <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={async () => { 
+                 const cedict = await handleCedictSearch(selectedText); // Await the result of handleCedictSearch
+
+                 const examples = [{}]
+                 cedict.slice(0, 10).map(example => {
+                  examples.push(example);
+                });
+
+                alert(JSON.stringify(examples))
+            }}>
+              <Plus className="mr-2 h-4 w-4" strokeWidth={1}/>
+              <span>Usage</span>
               <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
             </DropdownMenuItem>
             <DropdownMenuSub>
@@ -209,8 +210,19 @@ import TextWord from './text-word';
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           {/* <WrapperDrawer open={open} setOpen={setOpen}></WrapperDrawer> */}
-          <TextWord />
+          
+          <TextWord selectedText={selectedText} />
        
+          <DropdownMenuItem onClick={async () => { 
+            const result = await aiTranslate(selectedText)
+            // setAlert(result)
+            alert(result)
+          }}>
+            {/* <Dialog open={alert != '' && true} title='Translate:' description={alert} onCancel={() => setAlert('')} /> */}
+            <LanguagesIcon strokeWidth={1} className="mr-2 h-4 w-4" />
+            <span>Translate</span>
+          </DropdownMenuItem>
+
           <DropdownMenuItem>
             <Globe2Icon strokeWidth={1} className="mr-2 h-4 w-4" />
             <span>Remind</span>
@@ -229,6 +241,15 @@ import TextWord from './text-word';
       </DropdownMenu>
 
      </main>
-    )
-  }
-  
+
+
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default WrappedText;
+
+
+
