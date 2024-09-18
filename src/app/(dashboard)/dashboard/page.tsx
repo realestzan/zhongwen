@@ -15,7 +15,7 @@ export default function Page() {
             <h3 className="text-2xl md:text-4xl">Built for artists and designers</h3>
           </div>
           <div className="md:1/3 w-2/5 shrink-0 rounded-r-lg border-l">
-            <img src="/topic-3.svg" alt="placeholder" className="h-full w-full object-cover" />
+            <img src="/word-3.svg" alt="placeholder" className="h-full w-full object-cover" />
           </div>
         </div>
         <div className="p-4 text-zinc-600 md:p-8">
@@ -30,7 +30,7 @@ export default function Page() {
             <h3 className="text-2xl md:text-4xl">Built for coders and developers</h3>
           </div>
           <div className="md:1/3 w-2/5 shrink-0 rounded-r-lg border-l">
-            <img src="/topic-2.svg" alt="placeholder" className="h-full w-full object-cover" />
+            <img src="/word-4.svg" alt="placeholder" className="h-full w-full object-cover" />
           </div>
         </div>
         <div className="p-4 text-zinc-600 md:p-8">

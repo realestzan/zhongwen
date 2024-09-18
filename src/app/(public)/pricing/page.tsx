@@ -4,10 +4,10 @@ const Page = () => {
   return (
     <div>
       
-      <section className="py-32">
+      <section className="lg:py-32">
   <div>
-    <div className="mx-auto flex max-w-6xl flex-col gap-6">
-      <h2 className="text-pretty text-4xl font-bold lg:text-6xl">Pricing</h2>
+    <div className="mx-auto flex max-w-5xl flex-col gap-6">
+      <h2 className="text-pretty text-4xl font-bold lg:text-6xl">Pri<span className='text-ai'>cing</span></h2>
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <p className="max-w-screen-md text-gray-600 lg:text-xl">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat odio, expedita neque
@@ -18,11 +18,11 @@ const Page = () => {
             style={{outline: 'none'}}>
             <div className="h-full rounded-md transition-all has-[button[data-state=&quot;checked&quot;]]:bg-white">
               <button type="button" role="radio" aria-checked="true" data-state="checked" value="monthly"
-                className="aspect-square h-4 w-4 rounded-full border border-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 peer sr-only"
+                className="aspect-square h-4 w-4 rounded-full border  border-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 peer sr-only"
                 id="monthly" tabIndex={-1} data-radix-collection-item="">
                 <span data-state="checked" className="flex items-center justify-center"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                     className="lucide lucide-circle h-2.5 w-2.5 fill-current text-current">
                     <circle cx="12" cy="12" r="10"></circle>
                   </svg></span></button>
@@ -42,7 +42,7 @@ tabIndex={-1} value="monthly" /><label
             </div>
             <div className="h-full rounded-md transition-all has-[button[data-state=&quot;checked&quot;]]:bg-white">
               <button type="button" role="radio" aria-checked="false" data-state="unchecked" value="annually"
-                className="aspect-square h-4 w-4 rounded-full border border-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 peer sr-only"
+                className="aspect-square h-4 w-4 rounded-full border  border-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 peer sr-only"
                 id="annually" tabIndex={-1} data-radix-collection-item=""></button>
                 <input
   type="radio"
@@ -62,40 +62,40 @@ tabIndex={-1} value="annually" /><label
         </div>
       </div>
       <div className="flex w-full flex-col items-stretch gap-6 md:flex-row">
-        <div className="flex w-full flex-col rounded-lg border p-6 text-left">
+        <div className="flex w-full flex-col rounded-lg border  p-6 text-left">
           <div
-            className="items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-black/80 mb-8 block w-fit">
+            className="items-center rounded-full border  px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-black/80 mb-8 block w-fit">
             FREE
           </div>
           <span className="text-4xl font-medium">$0</span>
           <p className="invisible text-gray-600">Per month</p>
-          <div data-orientation="horizontal" role="none" className="shrink-0 bg-border h-[1px] w-full my-6"></div>
+          <div data-orientation="horizontal" role="none" className="shrink-0 bg-border  h-[1px] w-full my-6"></div>
           <div className="flex flex-col justify-between gap-20">
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Unlimited Integrations</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Windows, Linux, Mac support</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>24/7 Support</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Free updates</span>
@@ -107,33 +107,33 @@ tabIndex={-1} value="annually" /><label
             </button>
           </div>
         </div>
-        <div className="flex w-full flex-col rounded-lg border p-6 text-left">
+        <div className="flex w-full flex-col rounded-lg border  p-6 text-left">
           <div
-            className="items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-black/80 mb-8 block w-fit">
+            className="items-center rounded-full border  px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-black/80 mb-8 block w-fit">
             PRO
           </div>
           <span className="text-4xl font-medium">$9</span>
           <p className="text-gray-600">Per month</p>
-          <div data-orientation="horizontal" role="none" className="shrink-0 bg-border h-[1px] w-full my-6"></div>
+          <div data-orientation="horizontal" role="none" className="shrink-0 bg-border  h-[1px] w-full my-6"></div>
           <div className="flex h-full flex-col justify-between gap-20">
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Everything in FREE</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Live call suport every month</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Unlimited Storage</span>
@@ -145,40 +145,40 @@ tabIndex={-1} value="annually" /><label
             </button>
           </div>
         </div>
-        <div className="flex w-full flex-col rounded-lg border bg-gray-100 p-6 text-left">
+        <div className="flex w-full flex-col rounded-lg border  bg-gray-100 p-6 text-left">
           <div
-            className="items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-black/80 mb-8 block w-fit">
+            className="items-center rounded-full border  px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-black text-white hover:bg-black/80 mb-8 block w-fit">
             ENTERPRISE
           </div>
           <span className="text-4xl font-medium">$19</span>
           <p className="text-gray-600">Per user/month</p>
-          <div data-orientation="horizontal" role="none" className="shrink-0 bg-border h-[1px] w-full my-6"></div>
+          <div data-orientation="horizontal" role="none" className="shrink-0 bg-border  h-[1px] w-full my-6"></div>
           <div className="flex h-full flex-col justify-between gap-20">
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Everything in PRO</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Advanced analytics</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Custom branding</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                   className="lucide lucide-check size-4">
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg><span>Unlimited users</span>

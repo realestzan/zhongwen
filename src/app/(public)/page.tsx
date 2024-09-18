@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
+import { motion, useInView } from 'framer-motion'
+import AnimatedSection from '@/components/animate/section'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -13,17 +15,25 @@ const navigation = [
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const onboardingRef = useRef(null);
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+
+  const onboardingInView = useInView(onboardingRef, { once: true });
+  const section1InView = useInView(section1Ref, { once: true });
+  const section2InView = useInView(section2Ref, { once: true });
+
   return (
     <div className="mx-auto w-fit max-w-6xl">
     
-
+<AnimatedSection ref={onboardingRef} isInView={onboardingInView}>
     <section className="lg:py-36">
   <div className="overflow-hidden border-b border-muted">
     <div className="container">
       <div className="mx-auto flex max-w-5xl flex-col items-ď">
         <div className="z-10 items-ď text-gray-700 dark:text-gray-200">
           <h1 className="mb-8 text-gray-700 dark:text-gray-200 text-4xl font-medium lg:text-8xl">
-            Build your next project with Blocks
+            Learn Chinese with <span className='text-ai cursor-pointer'>Zhonegwen</span> - AI built in
           </h1>
           <p className="mx-auto max-w-screen-md text-gray-700 dark:text-gray-200 lg:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat
@@ -33,13 +43,13 @@ export default function Example() {
             <button
               className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-zinc-900 text-white hover:bg-zinc-900/90 h-10 px-4 py-2">
               Get started now<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-chevron-right ml-2 h-4">
                 <path d="m9 18 6-6-6-6"></path>
               </svg></button><button
-              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-zinc-100 hover:text-zinc-800 h-10 px-4 py-2">
+              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-zinc-100 hover:text-zinc-800 text-zinc-500 h-10 px-4 py-2">
               Learn more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-chevron-right ml-2 h-4">
                 <path d="m9 18 6-6-6-6"></path>
               </svg>
@@ -47,20 +57,21 @@ export default function Example() {
           </div>
         </div>
       </div>
-      <img src="/topic-1.svg" alt="placeholder"
-        className="mx-auto mt-24 max-h-[700px] w-full max-w-7xl rounded-t-lg object-cover shadow-lg" />
+      {/* <img src="/topic-1.svg" alt="placeholder"
+        className="mx-auto mt-24 max-h-[700px] w-full max-w-7xl rounded-t-lg object-cover shadow-lg" /> */}
+        <video src="/video-4.mp4" autoPlay loop muted className="mx-auto mt-24 max-h-[700px] w-full max-w-7xl rounded-t-lg object-cover shadow-lg"></video>
     </div>
   </div>
 </section>
+</AnimatedSection>
 
 
-
-
+<AnimatedSection ref={section1Ref} isInView={section1InView}>
       <section className="py-32">
   <div className="container">
     <div className="flex flex-col items-ď gap-6">
       <div
-        className="inline-flex items-ď w-fit rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+        className="inline-flex items-ď w-fit rounded-full border  px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
         Badge
       </div>
       <h2 className="mb-2 text-gray-700 dark:text-gray-200 text-3xl font-semibold lg:text-5xl">
@@ -69,10 +80,10 @@ export default function Example() {
       <p className="text-gray-700 dark:text-gray-200 lg:text-lg">Lorem ipsum dolor sit amet consectetur.</p>
       <div className="mt-6 flex flex-col gap-6 lg:flex-row">
         <div
-          className="rounded-lg border bg-card text-card-foreground shadow-sm flex flex-col justify-between gap-5 lg:w-1/3">
+          className="rounded-lg border  bg-card text-card-foreground shadow-sm flex flex-col justify-between gap-5 lg:w-1/3">
           <div className="flex flex-col space-y-1.5 p-6 items-start">
             <div
-              className="inline-flex items-ď rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+              className="inline-flex items-ď rounded-full border  px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
               Badge
             </div>
           </div>
@@ -82,9 +93,9 @@ export default function Example() {
           </div>
           <div className="flex items-ď p-6 pt-0">
             <button
-              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
+              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border  border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
               Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-chevron-right ml-2 h-4 w-4">
                 <path d="m9 18 6-6-6-6"></path>
               </svg>
@@ -96,10 +107,10 @@ export default function Example() {
             className="h-full max-h-96 w-full rounded-md object-cover" />
         </div>
         <div
-          className="rounded-lg border bg-card text-card-foreground shadow-sm flex flex-col justify-between gap-5 lg:w-1/3">
+          className="rounded-lg border  bg-card text-card-foreground shadow-sm flex flex-col justify-between gap-5 lg:w-1/3">
           <div className="flex flex-col space-y-1.5 p-6 items-start">
             <div
-              className="inline-flex items-ď rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+              className="inline-flex items-ď rounded-full border  px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
               Badge
             </div>
           </div>
@@ -109,9 +120,9 @@ export default function Example() {
           </div>
           <div className="flex items-ď p-6 pt-0">
             <button
-              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
+              className="inline-flex items-ď justify-ď whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border  border-input bg-foreground hover:bg-foreground/20 text-background hover:text-foreground h-10 px-4 py-2">
               Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-chevron-right ml-2 h-4 w-4">
                 <path d="m9 18 6-6-6-6"></path>
               </svg>
@@ -122,6 +133,7 @@ export default function Example() {
     </div>
   </div>
 </section>
+</AnimatedSection>
 
 
 
@@ -129,7 +141,7 @@ export default function Example() {
 
 
 
-
+<AnimatedSection ref={section2Ref} isInView={section2InView}>
 <section className="py-32">
   <div>
     <div>
@@ -137,10 +149,10 @@ export default function Example() {
         Get your team on the same page, literally
       </h1>
       <div className="mt-10 flex flex-col gap-6">
-        <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div className="rounded-lg border  bg-card text-card-foreground shadow-sm">
           <div className="flex flex-col space-y-1.5 p-6 pb-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin ="round"
               className="lucide lucide-code size-5">
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
@@ -153,15 +165,15 @@ export default function Example() {
             </p>
           </div>
           <div className="flex items-ď p-6 pt-0 justify-end pb-0">
-            <img className="h-[500px] w-full rounded-t-md object-cover object-ď"
-              src="/illu-1.jpeg" alt="placeholder" />
+            <video autoPlay loop muted className="h-[500px] w-full rounded-t-md object-cover object-ď"
+              src="/video-8.mp4"></video>
           </div>
         </div>
         <div className="flex flex-col gap-6 md:flex-row">
-          <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-full">
+          <div className="rounded-lg border  bg-card text-card-foreground shadow-sm w-full">
             <div className="flex flex-col space-y-1.5 p-6 pb-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-git-branch size-5">
                 <line x1="6" x2="6" y1="3" y2="15"></line>
                 <circle cx="18" cy="6" r="3"></circle>
@@ -176,14 +188,14 @@ export default function Example() {
               </p>
             </div>
             <div className="flex items-ď p-6 pt-0 justify-end pb-0 pr-0">
-              <img className="h-full max-h-96 w-full rounded-tl-md object-cover object-ď"
-                src="/illu-1.jpeg" alt="placeholder" />
+              <video autoPlay loop muted className="h-full max-h-96 w-full rounded-tl-md object-cover object-ď"
+                src="/video-2.mp4"></video>
             </div>
           </div>
           <div
-            className="rounded-lg border bg-card text-card-foreground shadow-sm flex w-full flex-col justify-between gap-10 md:gap-20">
+            className="rounded-lg border  bg-card text-card-foreground shadow-sm flex w-full flex-col justify-between gap-10 md:gap-20">
             <div className="flex flex-col space-y-1.5 p-6 items-start pb-1">
-              <img className="h-8" src="/images/placeholders/logos/figma.svg" alt="" />
+              <video autoPlay loop muted className="h-8" src="/video-4.mp4"></video>
             </div>
             <div className="p-6 pt-0 text-left">
               <q className="text-2xl md:text-3xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A sint, porro
@@ -200,14 +212,14 @@ export default function Example() {
     </div>
   </div>
 </section>
-
+</AnimatedSection>
 
 
 
 <section className="py-32">
   <div className="container">
-    <div className="space-y-10 rounded-lg border py-10 md:px-4">
-      <div className="grid rounded-lg border md:grid-cols-2">
+    <div className="space-y-10 rounded-lg border  py-10 md:px-4">
+      <div className="grid rounded-lg border  md:grid-cols-2">
         <div className="flex flex-col px-6 py-8 lg:px-8 lg:py-12 xl:px-12 xl:py-20">
           <h3 className="mb-3 text-2xl font-medium sm:mb-5 md:text-3xl lg:text-4xl">Secure Payments</h3>
           <div className="mb-8 text-sm text-gray-700 dark:text-gray-200 sm:mb-10 md:text-base">
@@ -217,7 +229,7 @@ export default function Example() {
           <ul className="mt-auto space-y-2 sm:space-y-3">
             <li className="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-circle-check-big mt-0.5 size-4 shrink-0 sm:mt-1">
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
@@ -226,7 +238,7 @@ export default function Example() {
             </li>
             <li className="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-circle-check-big mt-0.5 size-4 shrink-0 sm:mt-1">
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
@@ -236,12 +248,12 @@ export default function Example() {
           </ul>
         </div>
         <div className="relative order-first max-h-80 md:order-last md:max-h-[500px]">
-          <img src="/illu-1.jpeg" alt="placeholder"
+          <video autoPlay muted loop src="/video-5.mp4" 
             className="h-full w-full object-cover" /><span
             className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-sm bg-zinc-900 font-mono text-xs text-white md:left-10 md:top-10">01</span>
         </div>
       </div>
-      <div className="grid rounded-lg border md:grid-cols-2">
+      <div className="grid rounded-lg border  md:grid-cols-2">
         <div className="flex flex-col px-6 py-8 lg:px-8 lg:py-12 xl:px-12 xl:py-20">
           <h3 className="mb-3 text-2xl font-medium sm:mb-5 md:text-3xl lg:text-4xl">
             Automated Invoicing
@@ -253,7 +265,7 @@ export default function Example() {
           <ul className="mt-auto space-y-2 sm:space-y-3">
             <li className="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-circle-check-big mt-0.5 size-4 shrink-0 sm:mt-1">
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
@@ -263,7 +275,7 @@ export default function Example() {
           </ul>
         </div>
         <div className="relative order-first max-h-80 md:order-last md:max-h-[500px]">
-          <img src="/illu-1.jpeg" alt="placeholder"
+          <video autoPlay muted loop src="/video-1.mp4" 
             className="h-full w-full object-cover" /><span
             className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-sm bg-zinc-900 font-mono text-xs text-white md:left-10 md:top-10">02</span>
         </div>
@@ -288,7 +300,7 @@ export default function Example() {
       <div className="rounded-lg bg-foreground/5 p-5">
         <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
             className="lucide lucide-timer size-6">
             <line x1="10" x2="14" y1="2" y2="2"></line>
             <line x1="12" x2="15" y1="14" y2="11"></line>
@@ -303,7 +315,7 @@ export default function Example() {
       <div className="rounded-lg bg-foreground/5 p-5">
         <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
             className="lucide lucide-zoom-in size-6">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
@@ -319,7 +331,7 @@ export default function Example() {
       <div className="rounded-lg bg-foreground/5 p-5">
         <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-background"><svg
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
             className="lucide lucide-zap size-6">
             <path
               d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
@@ -351,7 +363,7 @@ export default function Example() {
             <h3 className="text-2xl md:text-4xl">Built for artists and designers</h3>
           </div>
           <div className="md:1/3 w-2/5 shrink-0 rounded-r-lg border-l">
-            <img src="/illu-1.jpeg" alt="placeholder" className="h-full w-full object-cover" />
+            <video autoPlay muted loop src="/video-6.mp4" className="h-full w-full object-cover" />
           </div>
         </div>
         <div className="p-4 md:p-8">
@@ -366,7 +378,7 @@ export default function Example() {
             <h3 className="text-2xl md:text-4xl">Built for coders and developers</h3>
           </div>
           <div className="md:1/3 w-2/5 shrink-0 rounded-r-lg border-l">
-            <img src="/illu-1.jpeg" alt="placeholder" className="h-full w-full object-cover" />
+            <video autoPlay muted loop src="/video-7.mp4" className="h-full w-full object-cover" />
           </div>
         </div>
         <div className="p-4 text-gray-700 dark:text-gray-200 md:p-8">

@@ -15,42 +15,42 @@ const Page = () => {
   </div> */}
   <div className="container grid gap-x-8 gap-y-16 md:grid-cols-4 grid-cols-2 lg:grid-cols-5 mx-auto">
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>书</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>书</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>说</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>说</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>走</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>走</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>重</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>重</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>量</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>量</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>进</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>进</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>开</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>开</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>
     <div className="flex flex-col items-center">
-      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12vh] h-[12vh] flex items-center justify-center rounded-3xl'><p className='text-[4vh] text-background'>没</p></div>
+      <div className='p-4 bg-foreground/70 shadow-sm transition hover:scale-90 hover:shadow-2xl hover:shadow-black/30 mb-4 w-[12dvh] h-[12dvh] flex items-center justify-center rounded-3xl'><p className='text-[4dvh] text-background'>没</p></div>
       <p className="text-center font-medium">Name</p>
       <p className="text-center  text-zinc-600 dark:text-gray-200">Role</p>
     </div>

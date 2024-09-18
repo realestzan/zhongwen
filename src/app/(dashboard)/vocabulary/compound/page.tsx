@@ -6,8 +6,8 @@ export default function Page() {
       
       <section>
   <div className="container">
-    <div className="space-y-10 rounded-lg border py-10 md:px-4">
-      <div className="grid rounded-lg border md:grid-cols-2">
+    <div className="space-y-10 rounded-lg border  py-10 md:px-4">
+      <div className="grid rounded-lg border  md:grid-cols-2">
         <div className="flex flex-col px-6 py-8 lg:px-8 lg:py-12 xl:px-12 xl:py-20">
           <h3 className="mb-3 text-2xl font-medium sm:mb-5 md:text-3xl lg:text-4xl">Secure Payments</h3>
           <div className="mb-8 text-sm text-zinc-600 sm:mb-10 md:text-base">
@@ -17,7 +17,7 @@ export default function Page() {
           <ul className="mt-auto space-y-2 sm:space-y-3">
             <li className="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-circle-check-big mt-0.5 size-4 shrink-0 sm:mt-1">
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
@@ -26,7 +26,7 @@ export default function Page() {
             </li>
             <li className="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-circle-check-big mt-0.5 size-4 shrink-0 sm:mt-1">
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
@@ -41,7 +41,7 @@ export default function Page() {
             className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-sm bg-zinc-900 font-mono text-xs text-white md:left-10 md:top-10">01</span>
         </div>
       </div>
-      <div className="grid rounded-lg border md:grid-cols-2">
+      <div className="grid rounded-lg border  md:grid-cols-2">
         <div className="flex flex-col px-6 py-8 lg:px-8 lg:py-12 xl:px-12 xl:py-20">
           <h3 className="mb-3 text-2xl font-medium sm:mb-5 md:text-3xl lg:text-4xl">
             Automated Invoicing
@@ -53,7 +53,7 @@ export default function Page() {
           <ul className="mt-auto space-y-2 sm:space-y-3">
             <li className="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin ="round"
                 className="lucide lucide-circle-check-big mt-0.5 size-4 shrink-0 sm:mt-1">
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>

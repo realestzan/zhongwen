@@ -9,14 +9,13 @@ export default function Page() {
 
 
  <section>
-  <div className="container">
-    <div className="flex flex-wrap md:flex-nowrap translate-x-32 max-md:translate-x-0 ">
+    <div className="flex flex-wrap md:flex-nowrap translate-x-32 max-md:translate-x-0 max-md:gap-8">
       <a href="">
         <div className="flex w-full">
           <div
-            className="relative m-1 flex flex-col items-start rounded-xl bg-white shadow-2xl transition delay-150 duration-300 ease-in-out md:-ml-16 md:w-80 md:hover:-translate-x-16 md:hover:-translate-y-8">
+            className="relative m-1 flex flex-col items-start rounded-xl bg-background shadow-2xl transition delay-150 duration-300 ease-in-out md:-ml-16 md:w-80 md:hover:-translate-x-16 md:hover:-translate-y-8">
             <img className="w-full rounded-t-xl object-cover object-center md:h-36 lg:h-48"
-              src="/topic-2.svg" alt="blog" />
+              src="/word-2.svg" alt="blog" />
             <div className="px-6 py-8">
               <h4 className="mt-4 text-2xl font-semibold text-gray-600">
                 <span className="">Entry</span>
@@ -34,7 +33,7 @@ export default function Page() {
       <a href="">
         <div className="flex w-full">
           <div
-            className="relative m-1 flex flex-col items-start rounded-xl bg-white shadow-2xl transition delay-150 duration-300 ease-in-out md:-ml-16 md:w-80 md:hover:-translate-x-16 md:hover:-translate-y-8">
+            className="relative m-1 flex flex-col items-start rounded-xl bg-background shadow-2xl transition delay-150 duration-300 ease-in-out md:-ml-16 md:w-80 md:hover:-translate-x-16 md:hover:-translate-y-8">
             <img className="w-full rounded-t-xl object-cover object-center md:h-36 lg:h-48"
               src="/topic-3.svg" alt="blog" />
             <div className="px-6 py-8">
@@ -54,9 +53,9 @@ export default function Page() {
       <a href="">
         <div className="flex w-full">
           <div
-            className="relative m-1 flex flex-col items-start rounded-xl bg-white shadow-2xl transition delay-150 duration-300 ease-in-out md:-ml-16 md:w-80 md:hover:-translate-x-16 md:hover:-translate-y-8">
+            className="relative m-1 flex flex-col items-start rounded-xl bg-background shadow-2xl transition delay-150 duration-300 ease-in-out md:-ml-16 md:w-80 md:hover:-translate-x-16 md:hover:-translate-y-8">
             <img className="w-full rounded-t-xl object-cover object-center md:h-36 lg:h-48"
-              src="/topic-4.svg" alt="blog" />
+              src="/word-1.svg" alt="blog" />
             <div className="px-6 py-8">
               <h4 className="mt-4 text-2xl font-semibold text-gray-600">
                 <span className="">Entry</span>
@@ -71,7 +70,6 @@ export default function Page() {
         </div>
       </a>
     </div>
-  </div>
 </section> 
 
 
